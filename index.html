@@ -1,319 +1,1729 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Portfolio" />
-        <meta name="author" content="Gokul Prakash P" />
-        <title>Portfolio</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Gokul Prakash P</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="profile"/></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./GOKUL PRAKASH P.pdf" target="_blank" download>Download Resume</a></li>
-                </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gokul Prakash</title>
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    /* Custom styles for landing page */
+    .landing-page {
+      background-image: url('banner.jpg');
+      background-size: cover;
+      background-position: center; /* Center the background image */
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* Align content to bottom */
+      align-items: center;
+      color: white;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      padding-bottom: 50px;
+    }
+    .landing-page h1 {
+      font-size: 3rem; /* Reduced font size */
+      font-weight: 600; /* Bold */
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect */
+      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Glow effect */
+    }
+    .landing-page p {
+      font-size: 2rem; /* Smaller font size for description */
+      font-weight: 400; /* Regular */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow effect */
+      filter: drop-shadow(1px 1px 2px rgba(200, 137, 137, 0.5)); /* Glow effect */
+      margin-bottom: 0; /* Ensure no default bottom margin */
+    }
+    /* Custom font for navbar-brand */
+    .navbar-brand {
+      font-family: 'Roboto', sans-serif; /* Change 'Roboto' to your preferred Google Font */
+      font-weight: bold;
+      font-size: 1.5rem; /* Increase font size */
+      text-transform: uppercase; /* Capitalize text */
+    }
+    .navbar-brand span {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Glow effect */
+    }
+    /* Adjust navbar links font style */
+    .navbar-nav .nav-link {
+      color: white !important; /* White color for navbar links */
+      font-size: 1.2rem; /* Increase font size */
+      margin-right: 4px;
+    }
+    /* Full screen height for sections */
+    section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Adjust padding for each section */
+    section:not(.landing-page) {
+      padding-top: 80px; /* Same height as the navbar */
+    }
+    /* Transparent navbar */
+    .navbar.transparent {
+      background-color: rgba(0, 0, 0, 0) !important;
+      transition: background-color 0.3s ease;
+    }
+    /* Opaque navbar */
+    .navbar.opaque {
+      background-color: #0B2E64 !important;
+      transition: background-color 0.3s ease;
+    }
+    /* Footer styles */
+    footer {
+      background-color: #0B2E64 !important; /* Footer background color */
+      color: white; /* Text color */
+      font-family: 'Poppins', sans-serif; /* Footer font family */
+    }
+    /* Hide scrollbar */
+    body::-webkit-scrollbar {
+      width: 0;  /* Remove scrollbar width */
+      height: 0; /* Remove scrollbar height */
+    }
+    /* Optional: You can style the track and thumb if you want */
+    body::-webkit-scrollbar-track {
+      background: transparent; /* Track color */
+    }
+    body::-webkit-scrollbar-thumb {
+      background: transparent; /* Thumb color */
+    }
+    .static-text {
+      display: inline;
+    }
+    .typing-cursor {
+      display: inline-block;
+      width: auto; /* Adjust width to fit the cursor */
+      font-weight: bold; /* Make the cursor bold */
+      color: white; /* Set cursor color */
+      animation: blink 0.7s infinite;
+      margin-left: 5px; /* Adjust margin between text and cursor */
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* CSS for bubble animation */
+    @keyframes bubbleAnimation {
+      0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1.0;
+      }
+      50% {
+        transform: translateY(-50px) scale(1);
+        opacity: 0.8; /* Adjust opacity as needed */
+      }
+      100% {
+        transform: translateY(-100px) scale(1.5);
+        opacity: 0.6; /* Adjust opacity as needed */
+      }
+    }
+
+    .bubble {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+      width: 20px; /* Adjust width */
+      height: 20px; /* Adjust height */
+      /* Make it square */
+      border-radius: 50%;
+      /* Apply animation */
+      animation: bubbleAnimation 1s ease-out forwards;
+      z-index: 999; /* Ensure bubbles are above other elements */
+    }
+
+    /* Optional: Add a box-shadow for a glowing effect */
+    .bubble {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    .rotating-text {
+      transition: transform 0.3s; /* Smooth transition for rotation */
+    }
+
+    /* Increase font size and style for about section */
+    .about-description {
+      font-size: 1.2rem; /* Increase font size */
+      line-height: 1.6; /* Increase line height for better readability */
+      color: #333; /* Darker text color for better contrast */
+    }
+
+    /* Add background color to about section */
+    #about {
+      background-color: #fff; /* Light gray background */
+      padding-top: 80px; /* Add padding to maintain consistency with other sections */
+    }
+
+    /* Center align text in the about section */
+    #about .container {
+      text-align: center;
+    }
+
+/* Style for badge container */
+.badge-container {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  justify-content: flex-start; /* Start from the left */
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px; /* Add some bottom padding to make room for scrollbar */
+  padding-left: 20px; /* Add left padding */
+}
+
+/* Style for individual badges */
+.badges {
+  width: 200px; /* Set width to 200px */
+  height: 200px; /* Set height to 200px */
+  margin-right: 10px; /* Adjust right margin */
+}
+
+/* Hide scrollbar */
+.badge-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in webkit browsers (Safari, Chrome) */
+}
+
+/* Custom style for carousel container */
+.carousel-container {
+    position: relative; /* Set position to relative */
+    margin: 0 auto; /* Center the carousel */
+    width: 200px; /* Reduce the width of the carousel */
+}
+
+  /* Custom style for pagination indicators */
+  .carousel-indicators {
+    position: absolute; /* Set position to absolute */
+    bottom: -30px; /* Adjust position to move indicators up */
+    left: 50%; /* Align indicators to the center */
+    transform: translateX(-50%); /* Center indicators horizontally */
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+
+  /* Custom style for individual pagination indicator */
+  .carousel-indicators li {
+    display: inline-block; /* Display indicators horizontally */
+    background-color: rgba(0, 0, 0, 0.5); /* Change to desired color */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Make indicators circular */
+    width: 10px; /* Set width */
+    height: 10px; /* Set height */
+    margin: 0 5px; /* Add margin between indicators */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Add transition effect */
+  }
+
+  /* Custom style for active pagination indicator */
+  .carousel-indicators .active {
+    background-color: #0B2E64; /* Change to match your navigation bar color */
+  }
+
+/* CSS for snowflake animation */
+.footer-snow {
+  position: relative;
+  height: 150px; /* Increased height of the footer */
+  overflow: hidden; /* Hide overflow content below footer */
+}
+
+.footer-snow .snowflake {
+  position: absolute;
+  top: -50px; /* Adjusted to start snowflakes just above footer */
+  color: #f8f9fa;
+  width: 40px;
+  z-index: 9999;
+  animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* CSS for mode toggle button */
+.mode-toggle-icon {
+  color: #FFD700;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  position: relative;
+  top: -1.5px;
+  display: none;
+  cursor: pointer;
+}
+/* Media query for mobile screens */
+@media (max-width: 576px) {
+      .landing-page h1 {
+        font-size: 2rem; /* Reduced font size */
+        white-space: nowrap; /* Prevent wrapping */
+      }
+      .landing-page h1 span {
+        display: block; /* Display "GOKUL PRAKASH" on a new line */
+      }
+      .landing-page p.intro {
+        font-size: 1.2rem; /* Reduced font size */
+      }
+      .landing-page p.intro .static-text,
+      .landing-page p.intro #dynamicText,
+      .typing-cursor {
+        display: inline;
+        font-size: 1rem; /* Reduced font size */
+        margin-left: 3px; /* Adjusted margin */
+      }
+      .typing-cursor {
+        margin-top: 7px; /* Adjusted margin top */
+      }
+      .about-description {
+        font-size: 1rem; /* Reduced font size for smaller screens */
+      }
+      .footer-snow .snowflake {
+        width: 20px;
+      }
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      .mode-toggle-icon {
+        top: 0;
+      }
+    }
+
+/* Additional styles for the resume section */
+#resume {
+  background-color: #fff; /* Light grey background color */
+  padding: 50px 0;
+  position: relative; /* Position relative for pseudo-element */
+  overflow: hidden; /* Hide overflow to prevent overflow of pseudo-elements */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Bottom shadow */
+}
+
+/* Top border pseudo-element */
+#resume::before {
+  top: 0; /* Position at the top */
+}
+
+/* Bottom border pseudo-element */
+#resume::after {
+  bottom: 0; /* Position at the bottom */
+}
+
+/* Section heading */
+#resume h1 {
+  color: #333; 
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Circular download button */
+.download-btn {
+  background-color: #0B2E64;
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  top: -10px;
+}
+
+.download-btn:hover {
+  cursor: pointer;
+  transform: scale(1.2) rotate(360deg);
+}
+
+/* Tabs */
+#resumeTabs {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Additional styles for tabs */
+.nav-tabs {
+  border: 0;
+  background-color: #fff; /* Background color for the tabs */
+}
+
+.nav-tabs .nav-link {
+  color: #555;
+  border: 2px solid #f0f0f0;
+  border-radius: 15px 15px 0 0; /* Rounded top corners */
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 10px 20px; /* Adjust padding for better spacing */
+  margin: 0 5px; /* Add margin for spacing between tabs */
+  background-color: #f8f9fa; /* Background color for unselected tabs */
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: #f0f0f0; /* Background color on hover */
+  transform: translateY(-10%) scale(1.1); /* Scale up by 20% on hover */
+}
+
+.nav-tabs .nav-link.active {
+  color: #fff; /* Text color for active tab */
+  background-color: #0B2E64; /* Background color for active tab */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for active tab */
+  border-bottom: none; /* Remove bottom border for active tab */
+  z-index: 2; /* Ensure active tab appears on top */
+}
+
+.nav-tabs .nav-link.active::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 50px;
+  height: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:not(.active)::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: transparent; /* Transparent underline for inactive tabs */
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover::before {
+  width: 50px; /* Increase width of underline on hover */
+}
+
+/* Tab content */
+.tab-content {
+  border-top: 4px solid #0B2E64;
+  min-height: 70vh;
+  background-color: #fff;
+  border-radius: 15px 15px 15px 15px; /* Rounded bottom corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: -1px; /* Match the border bottom position of tabs */
+  transition: all 0.3s ease;
+}
+
+/* Additional styles for the tab cards */
+.card {
+  background-color: #fff; /* Card background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.card-title {
+  color: #0B2E64; /* Title color */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #333; /* Text color */
+  margin-bottom: 10px;
+}
+
+.badge {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-right: 10px;
+  background-color: #0B2E64; /* Badge background color */
+  color: #fff; /* Badge text color */
+}
+
+
+/* Badge styles */
+.badge-primary {
+  background-color: #0B2E64;
+  color: #fff;
+}
+
+/* Styles for arrow buttons */
+.tab-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #0B2E64;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-arrow:hover {
+  transform: translateY(-50%) scale(1.2); /* Scale up by 20% on hover */
+}
+
+.tab-arrow.left {
+  left: 10px;
+}
+
+.tab-arrow.right {
+  right: 10px;
+}
+/* Additional styles for tab content and cards */
+.tab-pane {
+  padding: 20px;
+}
+
+.card {
+  margin-bottom: 30px;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.card ul {
+  margin-left: 20px;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+}
+
+.tab-pane.fade {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tab-pane.fade.show {
+  opacity: 1;
+}
+
+@media (min-width: 992px) {
+  .nav-tabs .nav-link {
+    font-size: 1.3rem;
+    padding: 12px 24px;
+  }
+
+  .card {
+    margin-bottom: 40px;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
+
+  .card-text {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav li:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.1); /* Scale up by 20% on hover */
+  }
+}
+
+/* Style the bullet points */
+.card ul {
+  margin-left: 30px; /* Adjust the left margin for better spacing */
+  list-style-type: none; /* Remove default bullet points */
+}
+
+.card ul li {
+  position: relative;
+  padding-left: 25px; /* Add left padding for space */
+  margin-bottom: 10px; /* Add margin between bullet points */
+  line-height: 1.6; /* Improve line height for readability */
+}
+
+#resume .card ul li::before {
+  content: ""; /* No content, as we'll use a decorative pseudo-element */
+  position: absolute;
+  left: 0;
+  top: 50%; /* Position bullet point vertically */
+  transform: translateY(-50%); /* Center bullet point vertically */
+  width: 10px; /* Width of the bullet point */
+  height: 10px; /* Height of the bullet point */
+  background-color: #0B2E64; /* Color of the bullet point */
+  border-radius: 50%; /* Make bullet point round */
+}
+
+/* Media query for mobile screens */
+@media (max-width: 576px) {
+  .card {
+    width: 100%; /* Set width almost full width with some padding */
+  }
+
+  .tab-pane {
+    padding: 0;
+  }
+
+  .tab-content {
+    padding: 10px;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .card-text{
+    font-size: 1rem;
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+  }
+
+  .badge{
+    font-size: 0.9rem;
+  }
+
+  .card ul {
+    margin-left: 0; /* Adjust the left margin for better spacing */
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .download-btn {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    top: -5px;
+  }
+}
+
+#contact {
+  text-align: center;
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+#contact .contact-heading {
+  color: #333;
+}
+
+#contact .container {
+  margin: 0 auto;
+}
+
+#contact .card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 40px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transitions for smooth effects */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content horizontally */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+#contact .card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  transform: translateY(-5px); /* Add subtle lift effect on hover */
+}
+
+#contact .contact-card,
+.social-card {
+  border: 2px solid #0B2E64;
+  transition: border-color 0.3s ease; /* Add transition for smooth effect */
+}
+
+#contact .contact-card:hover,
+.social-card:hover {
+  border-color: rgba(11, 46, 100, 0.5); /* Adjust border color on hover for glowing effect */
+}
+
+#contact .card h2 {
+  color: #0B2E64;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+#contact .card p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+#contact .card ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+#contact .card li {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center items vertically */
+}
+
+#contact .card li i {
+  font-size: 2rem;
+  margin-right: 5px;
+  width: 3rem; /* Fixed width for icons */
+  text-align: center; /* Center the icon */
+}
+
+#contact .social-links li {
+  margin-bottom: 15px;
+}
+
+#contact .social-links a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+#resume p a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+  padding-left: 5px;
+}
+
+#contact .social-links a:hover {
+  color: #0B2E64;
+}
+
+#resume p a:hover {
+  color: #0B2E64;
+}
+
+#contact .card ul li {
+  padding: 0;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 576px) {
+  #contact .card {
+    width: 100%;
+    max-width: none;
+  }
+  
+  #contact .card ul {
+    font-size: 1rem;
+  }
+  
+  #contact .social-links i {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: block;
+    width: 1.5rem; /* Adjust width for smaller screens */
+  }
+
+  #contact .card h2 {
+    font-size: 1.6rem;
+  }
+
+  #contact .card li i {
+    font-size: 1.4rem;
+    width: 2rem; /* Fixed width for icons */
+    position: relative;
+    top: 5px;
+  }
+
+  #contact .card p {
+    font-size: 0.9rem;
+  }
+
+  #contact .card ul {
+    font-size: 1rem;
+  }
+
+  #contact .card {
+    padding: 10px;
+  }
+}
+
+/* Active link styling */
+.navbar-nav .active {
+  text-shadow: 0 0 8px #f0f0f0;
+}
+
+#scroll-banner-1 {
+  min-height: 0;
+  height: 300px;
+  background-image: url('scroll-banner-1.jpeg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#scroll-banner-2 {
+  min-height: 0;
+  height: 300px;
+  background-image: url('scroll-banner-2.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 576px) {
+  #scroll-banner-1, #scroll-banner-2  {
+    height: 200px;
+  }
+}
+
+/* Dark mode */
+
+.dark-mode {
+    background-color: #333 !important;
+    color: #FFF !important;
+}
+
+.dark-mode #about {
+    background-color: #333 !important;
+    color: #FFF !important;
+}
+
+.dark-mode .about-description {
+    background-color: #333 !important;
+    color: #FFF !important;
+}
+
+.dark-mode .navbar.opaque {
+  background-color: #777 !important;
+}
+
+.dark-mode .carousel-indicators li {
+  background-color: #777 !important;
+}
+
+.dark-mode .carousel-indicators .active {
+  background-color: #fff !important;
+}
+
+.dark-mode #resume {
+    background-color: #333 !important;
+    color: #FFF !important;
+}
+
+.dark-mode #resume h1 {
+  color: #fff !important;
+}
+
+.dark-mode .download-btn {
+  background-color: #777 !important;
+}
+
+.dark-mode .nav-tabs {
+  background-color: #333 !important;
+}
+
+.dark-mode .nav-tabs .nav-link {
+  color: #555 !important;
+  border: 2px solid #f0f0f0 !important;
+  background-color: #f8f9fa !important;
+}
+
+.dark-mode .nav-tabs .nav-link:hover {
+  background-color: #f0f0f0 !important;
+}
+
+.dark-mode .nav-tabs .nav-link.active {
+  color: #fff !important;
+  background-color: #777 !important;
+}
+
+.dark-mode .tab-arrow {
+  background-color: #777 !important;
+}
+
+.dark-mode .tab-content {
+  border-top: 4px solid #777 !important;
+  background-color: #333 !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .card {
+  background-color: #333 !important;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .card:hover {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark-mode .card-title {
+  color: #f8f9fa !important;
+}
+
+.dark-mode .card-text {
+  color: #fff !important;
+}
+
+.dark-mode .badge {
+  background-color: #777 !important;
+  color: #fff !important;
+}
+
+.dark-mode .badge-primary {
+  background-color: #777 !important;
+  color: #fff !important;
+}
+
+.dark-mode #resume .card ul li::before {
+  background-color: #777 !important;
+}
+/*  */
+.dark-mode #contact {
+  background-color: #333 !important;
+}
+
+.dark-mode #contact .contact-heading {
+  color: #fff !important;
+}
+
+.dark-mode #contact .card {
+  background-color: #333 !important;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode #contact .card:hover {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark-mode #contact .contact-card,
+.social-card {
+  border: 2px solid #777 !important;
+}
+
+.dark-mode #contact .contact-card:hover,
+.social-card:hover {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark-mode #contact .card h2 {
+  color: #f8f9fa !important;
+}
+
+.dark-mode #contact .card p {
+  color: #DDD !important;
+}
+
+.dark-mode #contact .social-links a {
+  color: #4C87C3 !important;
+}
+
+.dark-mode #contact .social-links a:hover {
+  color: #7CA6D8 !important;
+}
+
+.dark-mode #resume p a {
+  color: #4C87C3 !important;
+}
+
+.dark-mode #resume p a:hover {
+  color: #7CA6D8 !important;
+}
+
+.dark-mode footer {
+  background-color: #777 !important;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top transparent">
+  <div class="container">
+    <div>
+      <a class="navbar-brand" href="#"><span>GOKUL PRAKASH</span></a>
+      <!-- Toggle button for light/dark mode -->
+      <i class="mode-toggle-icon fas fa-sun"></i>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navigation links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#resume">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Landing Page -->
+  <section class="landing-page">
+    <div class="rotating-text">
+    <h1>HI, THIS IS <span>GOKUL PRAKASH</span></h1>
+    <p class="intro">
+      <span class="static-text">I'm a </span>
+      <span id="dynamicText"></span>
+      <span class="typing-cursor">|</span>
+    </p>
+  </div>
+    <!-- Bubble container -->
+    <div class="bubble-container" id="bubbleContainer"></div>
+  </section>
+
+
+<!-- About Section -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1 class="mt-5 mb-4">About Me</h2>
+        <!-- Badge carousel container -->
+        <div class="carousel-container">
+          <!-- Badge carousel -->
+          <div id="badgeCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="badge1.png" class="d-block mx-auto badges" alt="Badge 1">
+              </div>
+              <div class="carousel-item">
+                <img src="badge2.png" class="d-block mx-auto badges" alt="Badge 2">
+              </div>
+              <div class="carousel-item">
+                <img src="badge3.png" class="d-block mx-auto badges" alt="Badge 3">
+              </div>
+              <div class="carousel-item">
+                <img src="badge4.png" class="d-block mx-auto badges" alt="Badge 4">
+              </div>
+              <!-- Repeat as needed for more badges -->
             </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Gokul
-                        <span class="text-primary">Prakash</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                        Senior Software Engineer · (+91) 8946069629 ·
-                        <a href="mailto:gokulprakash22@gmail.com">gokulprakash22@gmail.com</a>
-                    </div>
-                    <p class="lead mb-5">Dedicated Cloud and DevOps Engineer with around 3 years of hands-on expertise in designing, implementing,
-                        and optimizing cloud infrastructure. Proficient in deploying scalable and resilient solutions, automating processes,
-                        and seamlessly integrating DevOps practices for enhanced efficiency and performance. Seeking a challenging
-                        role that allows me to apply my cloud and DevOps proficiency, contributing to the growth and success of the
-                        organization.</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://linkedin.com/in/gokulprakash22" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <!-- <a class="social-icon" href="https://github.com/gokulprakash22" target="_blank"><i class="fab fa-github"></i></a> -->
-                        <!-- <a class="social-icon" href="https://www.hackerrank.com/gokulprakash22" target="_blank"><i class="fab fa-hackerrank"></i></a> -->
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            
-            <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Ernst and Young GDS, Chennai</h3>
-                            <div class="subheading mb-3">Senior Software Engineer</div>
-                            <h4 class="mb-0">The Home Depot (THD)</h4>
-                            <div class="mb-5">
-                            <p>Utilized Terraform for orchestration and efficiently maintained a diverse
-                                environment with 60+ VMs, including Sandbox, Dev, QA, Non-prod, and Prod environments, alongside
-                                other Azure services in the Azure cloud.</p>
-                            <p>Managed VM image creation, configuration, dependency
-                                installation, and automation through Azure DevOps CI/CD pipelines and Ansible.</p>
-                            <p>Administered IAM,
-                                monitoring systems, and took vulnerability elimination initiatives, ensuring a robust and secure
-                                technological infrastructure.                                
-                                </p>
-                                </div>
-                            <h4 class="mb-0">Sustainability Enterprise Asset Management (SEAM)</h4>
-                            <div class="mb-5">
-                            <p>Developed an Asset Carbon Emissions Monitoring
-                                System using technologies such as React.js, Node.js, Loopback 4, and MySQL.</p>
-                            <p>This comprehensive
-                                project was directed from start to finish, encompassing design, development, testing, and deployment.</p>
-                            <p>The application was deployed in an OpenShift cluster within the IBM Cloud and automated through
-                                Tekton CI/CD pipelines streamlined the deployment process. I successfully showcased the completed
-                                system to clients within the given 6-month deadline.                                                               
-                                </p>
-                                </div>
-                            <h4 class="mb-0">EY-IBM TechHub</h4>
-                            <div class="mb-5">
-                            <p>Engaged in the hybrid cloud team as part of the EY-IBM alliance, my responsibilities
-                                involve architecting customized IBM Cloud solutions and provisioning various IBM Cloud services.</p>
-                            <p>During
-                                interactions with numerous clients, I gained insights into their requirements and successfully orchestrated
-                                10+ deployments of IBM products and containerized applications in OpenShift or virtual machines within
-                                the IBM Cloud, all tailored to meet specific client needs.
-                                </p>
-                                </div>
-                            <h4 class="mb-0">Food Swipe</h4>
-                            <div class="mb-5">
-                            <p>An online food ordering web application comprising 5 microservices established using
-                                Spring Boot and MySQL. </p>
-                            <p>Involved in the backend team to implement essential REST APIs, JWT
-                                authentication, Spring state machine, and Kafka integration, while also creating Dockerfiles for
-                                containerization.</p>
-                            <p>Additionally, I served as one of the presenters from the backend team and successfully
-                                showcased the complete application workflow to the EY leadership team.                                                             
-                                </p>
-                                </div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Feb 2021 - Present (3+ years)</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Freelancer</h3>
-                            <div class="subheading mb-3">Cloud and Backend Developer</div>
-                            <h4 class="mb-0">AyeVee</h4>
-                            <p>Social media mobile app with 5L+ downloads. Developed a significant portion of the backend
-                                application entirely from scratch, utilizing Spring Boot and MySQL.</p>
-                            <p>Crafted APIs essential for both the
-                                mobile app and admin panel. Integrated Firebase for user management and authentication, alongside
-                                Zoom for live video features.</p>
-                            <p>Deployed the Spring Boot application on AWS Elastic Beanstalk, with the
-                                database hosted on AWS RDS. Utilized various AWS services including S3 bucket for video storage, AWS
-                                Lambda, AWS Elemental MediaConvert, and CloudWatch for video processing and scheduling.
-                                </p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Oct 2020 - Feb 2021 (5 months)</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Tactii, Canada (Formerly TalentAccurate)</h3>
-                            <div class="subheading mb-3">Remote Intern</div>
-                            <h4 class="mb-0">Featurepreneur</h4>
-                            <p>A web platform connecting clients with beginner ML and data scientists for analysis and
-                                micro predictions using client business data. </p>
-                            <p>Built with Flask and MongoDB, I led the backend team,
-                                constructing essential APIs from scratch and establishing a solid foundation for the backend application.</p>
-                            <p>Additionally, I effectively mentored the succeeding intern batch and conducted knowledge transfer
-                                sessions to ensure project continuity and sustainability.
-                                </p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">July 2020 - Oct 2020 (4 months)</span></div>
-                    </div>
-
-                </div>
-            </section>
-            <hr class="m-0" />
-
-            <!-- Education-->
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">St.Joseph's college of Engineering, Chennai</h3>
-                            <div class="subheading mb-3">B.E. Computer Science and Engineering</div>
-                            <p>CGPA: 8.72</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">2021</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Shree Niketan Matriculation Hr. Sec. School, Tiruvallur</h3>
-                            <div class="subheading mb-3">HSC</div>
-                            <p>Percentage: 96.25%</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">2017</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            
-            <!-- Skills-->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Technical Skills</h2>
-                    <div class="subheading mb-3">Cloud Platforms</div>
-                    <ul class="fa-ul mb-4">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Amazon Web Services (AWS)
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Microsoft Azure
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Google Cloud Platform (GCP)
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            IBM Cloud
-                        </li>
-                    </ul>
-                    <div class="subheading mb-3">DevOps</div>
-                    <ul class="fa-ul mb-4">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Containerization and Orchestration - Docker, Kubernetes, OpenShift
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            IaC and Configuration Management - Terraform, Ansible
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            CI/CD and Version Control: Azure Pipelines, Jenkins, Git
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Operating Systems - Linux, macOs, Windows
-                        </li>
-                    </ul>
-                    <div class="subheading mb-3">Full Stack Web Development</div>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Programming Languages - Java, Python3, JavaScript, TypeScript, Shell Scripting
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Web Frameworks - Spring Boot, Node.js, Flask, React.js
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Databases - MySQL, MongoDB
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Interests-->
-            <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
-                    <h4 class="mb-0">Passionate about Cloud Computing</h4>
-                    <p class="mb-5">With a keen interest in cloud technologies, I'm constantly exploring and learning about the latest advancements in cloud computing. From infrastructure as code to serverless architecture, I enjoy diving deep into various cloud platforms to understand their capabilities and how they can drive innovation.</p>
-                    <h4 class="mb-0">Enthusiastic about DevOps</h4>
-                    <p class="mb-5">DevOps practices resonate with me as they bridge the gap between development and operations, fostering collaboration and automation throughout the software development lifecycle. I actively seek opportunities to implement DevOps principles, leveraging tools like Docker, Kubernetes, and Jenkins to streamline workflows and enhance deployment efficiency.</p>
-                    <h4 class="mb-0">Excited about Full Stack Web Development</h4>
-                    <p class="mb-0">Aspiring to be proficient in full stack web development, I immerse myself in front-end and back-end technologies such as React.js, Node.js, and Flask. From designing user interfaces to building scalable APIs, I find joy in creating cohesive web applications that deliver seamless user experiences.</p>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Awards-->
-            <section class="resume-section" id="awards">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Achievements & Certifications</h2>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Google Cloud Certified Associate Cloud Engineer
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            IBM Certified Professional Architect - Cloud v5
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            IBM Certified Technical Advocate - Cloud v3
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Udemy certification in Docker & Kubernetes: The Complete Practical Guide
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Udemy certification in The Complete 2024 Web Development Bootcamp
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            SoloLearn certifications in JAVA and Python3.
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Cambridge English BEC Preliminary certification with grade B1.
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            EY Cloud Silver Badge achieved by showcasing my expertise and works in the cloud domain.
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Honored as Star Performer while working in the Cognizant Student Club.
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Secured 
-                            1<sup>st</sup>
-                            Place at Smart India Hackathon 2019 by solving a Yamaha problem statement.
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Secured
-                            1<sup>rd</sup>
-                            Place in the code challenge event at the Intra-Department Symposium 2019.
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            <!-- Pagination indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#badgeCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#badgeCarousel" data-slide-to="1"></li>
+              <li data-target="#badgeCarousel" data-slide-to="2"></li>
+              <li data-target="#badgeCarousel" data-slide-to="3"></li>
+              <!-- Add more li elements for additional badges -->
+            </ol>
+          </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        <!-- Description -->
+        <p class="about-description mt-5">
+          I'm Gokul Prakash, a passionate Software Engineer with a deep interest in crafting innovative solutions. With over 3 years of experience and a strong background in Computer Science and Engineering, I love tackling complex problems using my expertise in various technologies including Full-Stack (Spring Boot, React), Databases (MySQL, MongoDB), Multi-Cloud, and DevOps tools. I'm dedicated to creating impactful solutions that make a real difference and set new standards in the industry.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scroll Section 1 -->
+<section id="scroll-banner-1"></section>
+
+
+<!-- Resume Section -->
+<section id="resume">
+  <div class="container">
+    <div class="row align-items-center justify-content-center text-center">
+      <div class="col-md-12">
+        <h1 class="mt-5 mb-4 d-inline-block">Resume</h2>
+        <!-- Circular download button -->
+        <a href="GokulPrakash.pdf" target="_blank" download>
+        <div class="download-btn d-inline-block ml-3">
+          <i class="fas fa-download download-icon"></i>
+        </div>
+      </a>
+      </div>
+    </div>
+    <div class="row align-items-center justify-content-center text-center">
+      <div class="col-md-12">
+        <p class="about-description mt-2">Explore my resume to learn more about my professional journey.</p>
+      </div>
+    </div>
+    <!-- Tabs for Experience, Education, Skills, and Achievements -->
+    <ul class="nav nav-tabs mt-4 position-relative row" id="resumeTabs" role="tablist">
+      <button class="tab-arrow left col-2 col-lg-1" id="prevTab"><i class="fas fa-chevron-left"></i></button>
+      <div class="row align-items-center justify-content-center text-center col-10">
+      <li class="nav-item col d-lg-block" id="experience-tab-list">
+        <a class="nav-link active" id="experience-tab" data-toggle="tab" href="#experience" role="tab" aria-controls="experience" aria-selected="true">Experience</a>
+      </li>
+      <li class="nav-item col d-none d-lg-block" id="education-tab-list">
+        <a class="nav-link" id="education-tab" data-toggle="tab" href="#education" role="tab" aria-controls="education" aria-selected="false">Education</a>
+      </li>
+      <li class="nav-item col d-none d-lg-block" id="skills-tab-list">
+        <a class="nav-link" id="skills-tab" data-toggle="tab" href="#skills" role="tab" aria-controls="skills" aria-selected="false">Skills</a>
+      </li>
+      <li class="nav-item col d-none d-lg-block" id="achievements-tab-list">
+        <a class="nav-link" id="achievements-tab" data-toggle="tab" href="#achievements" role="tab" aria-controls="achievements" aria-selected="false">Achievements</a>
+      </li>
+      </div>
+      <button class="tab-arrow right col-2 col-lg-1" id="nextTab"><i class="fas fa-chevron-right"></i></button>
+    </ul>
+
+    <div class="tab-content mt-2" id="resumeTabContent">
+      <!-- Experience tab content -->
+      <div class="tab-pane fade show active" id="experience" role="tabpanel" aria-labelledby="experience-tab">
+        <!-- Sample data for experience -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Senior Software Engineer</h5>
+            <p class="card-text">EY Global Delivery Services India LLP, Chennai</p>
+            <p class="card-text">Duration: Apr 2023 - Present</p>
+            <ul class="card-text">
+              <li>Developed a food ordering app comprising 5 microservices, developed using Java, Spring Boot, React, Apache Kafka, and MySQL.</li>
+              <li>Built a Sustainability Enterprise Asset Management system enabling organizations to track carbon emissions from their assets, developed with Node.js, React, and MySQL.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Additional experience cards -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Software Engineer</h5>
+            <p class="card-text">EY Global Delivery Services India LL, Chennai</p>
+            <p class="card-text">Duration: Aug 2021 - Apr 2023</p>
+            <ul class="card-text">
+              <li>Provisioned and monitored 60+ multi-regional virtual machines along with various Azure services, and orchestrated Azure infrastructure through Terraform and Ansible.</li>
+              <li>Successfully architected 10+ customized IBM Cloud solutions and provisioned diverse IBM Cloud services tailored to meet specific client requirements.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Software Engineer Intern</h5>
+            <p class="card-text">EY Global Delivery Services India LLP, Chennai</p>
+            <p class="card-text">Duration: Feb 2021 - June 2021</p>
+            <ul class="card-text">
+              <li>Acquired training in Java, design patterns, Spring Boot, MySQL, and microservices with Apache Kafka.</li>
+              <li>Applied skills to develop a sample e-commerce website, showcasing proficiency in software development.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Remote Intern</h5>
+            <p class="card-text">Tactii (Formerly TalentAccurate), Canada</p>
+            <p class="card-text">Duration: Summer 2018</p>
+            <ul class="card-text">
+              <li>Led backend team in developing a web platform connecting organisations with budding ML and data science talents using Python, Flask and MongoDB.</li>
+              <li>Acquired hands-on training in implementating containerisation techniques using Docker and Kubernetes.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Add more cards for additional experiences -->
+      </div>
+      <!-- Education tab content -->
+      <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="education-tab">
+        <!-- Sample data for education -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">B.E., Computer Science and Engineering</h5>
+            <p class="card-text">St. Joseph's College of Engineering, Chennai (Affiliated to Anna University)</p>
+            <p class="card-text">Graduation Year: 2021</p>
+            <p class="card-text">Graduated with First Class with Distinction (CGPA: 8.72)</p>
+          </div>
+        </div>
+        <!-- Additional education cards -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Higher Secondary Certificate (HSC)</h5>
+            <p class="card-text">Shree Niketan Matriculation Higher Secondary School, Thiruvallur</p>
+            <p class="card-text">Graduation Year: 2017</p>
+            <p class="card-text">Completed with excellent results and a score of 96.25%.</p>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Secondary School Leaving Certificate (SSLC)</h5>
+            <p class="card-text">Shree Niketan Matriculation Higher Secondary School, Thiruvallur</p>
+            <p class="card-text">Graduation Year: 2015</p>
+            <p class="card-text">Achieved outstanding results with a score of 98.20%.</p>
+          </div>
+        </div>
+        <!-- Add more cards for additional education -->
+      </div>
+    <!-- Skills tab content -->
+<div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+  <!-- Sample data for skills -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Programming Languages</h5>
+      <p class="card-text">Proficient in various programming languages including JavaScript, Python, and Java.</p>
+      <p class="card-text mt-3">
+        <span class="badge badge-primary mr-2 mt-2">Java</span>
+        <span class="badge badge-primary mr-2 mt-2">Python3</span>
+        <span class="badge badge-primary mt-2">JavaScript</span>
+        <span class="badge badge-primary mt-2">TypeScript</span>
+        <span class="badge badge-primary mt-2">Shell Scripting</span>
+      </p>
+    </div>
+  </div>
+  <!-- Additional skills cards -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Web Frameworks</h5>
+      <p class="card-text">Experience with modern web technologies such as HTML5, CSS3, and React.js.</p>
+      <p class="card-text mt-3">
+        <span class="badge badge-primary mr-2 mt-2">Spring Boot</span>
+        <span class="badge badge-primary mr-2 mt-2">Node.js</span>
+        <span class="badge badge-primary mr-2 mt-2">Flask</span>
+        <span class="badge badge-primary mt-2">React.js</span>
+      </p>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Databases</h5>
+      <p class="card-text">Knowledge of backend technologies including Node.js, Express.js, and MongoDB.</p>
+      <p class="card-text mt-3">
+        <span class="badge badge-primary mr-2 mt-2">MySQL</span>
+        <span class="badge badge-primary mr-2 mt-2">MongoDB</span>
+      </p>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Architectures and Build Tools</h5>
+      <p class="card-text">Knowledge of backend technologies including Node.js, Express.js, and MongoDB.</p>
+      <p class="card-text mt-3">
+        <span class="badge badge-primary mr-2 mt-2">Microservices</span>
+        <span class="badge badge-primary mr-2 mt-2">Design patterns</span>
+        <span class="badge badge-primary mr-2 mt-2">Kafka</span>
+        <span class="badge badge-primary mr-2 mt-2">JUnit</span>
+        <span class="badge badge-primary mr-2 mt-2">Maven</span>
+      </p>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Cloud Platforms</h5>
+      <p class="card-text">Knowledge of backend technologies including Node.js, Express.js, and MongoDB.</p>
+      <p class="card-text mt-3">
+        <span class="badge badge-primary mr-2 mt-2">AWS</span>
+        <span class="badge badge-primary mr-2 mt-2">Azure</span>
+        <span class="badge badge-primary mr-2 mt-2">GCP</span>
+        <span class="badge badge-primary mr-2 mt-2">IBM Cloud</span>
+      </p>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">DevOps</h5>
+      <p class="card-text">Knowledge of backend technologies including Node.js, Express.js, and MongoDB.</p>
+      <p class="card-text mt-3">
+        <span class="badge badge-primary mr-2 mt-2">Docker</span>
+        <span class="badge badge-primary mr-2 mt-2">Kubernetes</span>
+        <span class="badge badge-primary mr-2 mt-2">OpenShift</span>
+        <span class="badge badge-primary mr-2 mt-2">Terraform</span>
+        <span class="badge badge-primary mr-2 mt-2">Ansible</span>
+        <span class="badge badge-primary mr-2 mt-2">Jenkins</span>
+        <span class="badge badge-primary mr-2 mt-2">Git</span>
+      </p>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Operating Systems</h5>
+      <p class="card-text">Knowledge of backend technologies including Node.js, Express.js, and MongoDB.</p>
+      <p class="card-text mt-3">
+        <span class="badge badge-primary mr-2 mt-2">Linux</span>
+        <span class="badge badge-primary mr-2 mt-2">macOs</span>
+        <span class="badge badge-primary mr-2 mt-2">Windows</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Achievements tab content -->
+<div class="tab-pane fade" id="achievements" role="tabpanel" aria-labelledby="achievements-tab">
+  <!-- Sample data for achievements -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Honours</h5>
+      <div class="card-text">
+        <p>&#11088; Honoured with the EY Cloud Silver Badge for showcasing my expertise and works in the cloud domain.</p>
+        <p>&#11088; Honored as Star Performer while working in the Cognizant Student Club.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Additional achievements -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Awards</h5>
+      <div class="card-text">
+        <p>&#127942; Secured 1st place at Smart India Hackathon 2019 by solving a Yamaha problem statement.</p>
+        <p>&#127942; Secured 1st place in the code challenge event at the Intra-Department Symposium 2019.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Certifications</h5>
+      <div class="card-text">
+        <p>&#127891; Google Cloud Certified Associate Cloud Engineer.
+          <a href="https://www.credly.com/badges/bb4c71dd-7127-4ece-865f-18b085f797b0/public_url" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-external-link-alt external-link-icon"></i>
+        </a></p>
+        <p>&#127891; IBM Certified Professional Architect - Cloud v5.
+          <a href="https://www.credly.com/badges/dbe3a7c5-f68a-4b15-97cf-6a61a704096d/public_url" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-external-link-alt external-link-icon"></i>
+        </a></p>
+        <p>&#127891; IBM Certified Technical Advocate - Cloud v3.
+          <a href="https://www.credly.com/badges/1d7e99e0-3066-4e8c-910e-ea896d5a9338/public_url" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-external-link-alt external-link-icon"></i>
+        </a></p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- Scroll Section 2 -->
+<section id="scroll-banner-2"></section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h1 class="mb-4 mt-4 contact-heading">Contact Me</h1>
+    <div class="row">
+      <!-- Contact Information Column -->
+      <div class="col-lg-6 mt-4">
+        <div class="card contact-card">
+          <h2>Contact Information</h2>
+          <p>You can contact me through:</p>
+          <ul class="social-links">
+            <li>
+              <i class="fas fa-phone"></i>
+              (+91) 89460 69629
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:gokulprakash22@gmail.com">gokulprakash22@gmail.com</a>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              Thiruvallur, TN, IN - 602001
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Online User Handles Column -->
+      <div class="col-lg-6 mt-4">
+        <div class="card social-card">
+          <h2>Online User Handles</h2>
+          <p>Find me on:</p>
+          <ul class="social-links">
+            <li>
+              <i class="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/gokulprakash22/" target="_blank">linkedin.com/in/gokulprakash22</a>
+            </li>
+            <li>
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/gokulprakash22" target="_blank">github.com/gokulprakash22</a>
+            </li>
+            <li>
+              <i class="fas fa-laptop-code"></i>
+              <a href="https://leetcode.com/gokulprakash22/" target="_blank">leetcode.com/gokulprakash22</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="text-white text-center py-5 footer-snow">
+  <div class="container">
+    <p>&copy; <span id="currentYear"></span> Gokul Prakash. All rights reserved.</p>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Custom JS -->
+
+<script>
+  $(document).ready(function() {
+    const textArray = ["Full Stack Developer", "Cloud Engineer", "DevOps Engineer"];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isTyping = true;
+    const typingDelay = 100; // Delay between typing each character
+    const erasingDelay = 50; // Delay between erasing each character
+    const newTextDelay = 3000; // Delay before typing the next text
+
+    function type() {
+      if (isTyping && charIndex < textArray[textIndex].length) {
+        $('#dynamicText').text(textArray[textIndex].slice(0, charIndex + 1));
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else if (!isTyping && charIndex >= 0) {
+        $('#dynamicText').text(textArray[textIndex].slice(0, charIndex));
+        charIndex--;
+        setTimeout(type, erasingDelay);
+      } else {
+        isTyping = !isTyping;
+        if (isTyping) {
+          textIndex = (textIndex + 1) % textArray.length;
+          setTimeout(type, typingDelay);
+        } else {
+          setTimeout(type, newTextDelay);
+        }
+      }
+    }
+
+    $(function() {
+      type();
+    });
+  });
+</script>
+<!-- Custom JS for smooth scrolling -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a.nav-link').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Smooth scrolling to top when clicking on .navbar-brand
+    document.querySelector('.navbar-brand').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Function to update navbar transparency
+    function updateNavbarTransparency() {
+      const navbar = document.querySelector('.navbar');
+      const landingPageHeight = document.querySelector('.landing-page').offsetHeight - 1;
+      const navbarTabs = document.querySelectorAll('.navbar-nav .nav-item');
+      const scroll1Height = document.querySelector('#scroll-banner-1').offsetHeight;
+      const scroll2Height = document.querySelector('#scroll-banner-2').offsetHeight;
+      const aboutHeight = document.querySelector('#about').offsetHeight + landingPageHeight + scroll1Height;
+      const resumeHeight = document.querySelector('#resume').offsetHeight + aboutHeight + scroll2Height;
+
+      if (window.scrollY > landingPageHeight) {
+        navbar.classList.add('opaque');
+        navbar.classList.remove('transparent');
+      } else {
+        navbar.classList.add('transparent');
+        navbar.classList.remove('opaque');
+      }
+
+      if(window.scrollY >= resumeHeight) {
+        navbarTabs[0].classList.remove('active');
+        navbarTabs[1].classList.remove('active');
+        navbarTabs[2].classList.add('active');
+      } else if(window.scrollY >= aboutHeight) {
+        navbarTabs[0].classList.remove('active');
+        navbarTabs[2].classList.remove('active');
+        navbarTabs[1].classList.add('active');
+      } else if(window.scrollY >= landingPageHeight) {
+        navbarTabs[1].classList.remove('active');
+        navbarTabs[2].classList.remove('active');
+        navbarTabs[0].classList.add('active');
+      } else {
+        navbarTabs[0].classList.remove('active');
+        navbarTabs[1].classList.remove('active');
+        navbarTabs[2].classList.remove('active');
+      }
+    }
+
+    // Call the function on window scroll
+    window.addEventListener('scroll', updateNavbarTransparency);
+    // Call the function on page load
+    updateNavbarTransparency();
+  });
+
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let isMouseOnLandingPage = false; // Variable to track mouse position
+
+  // Function to create bubbles
+  function createBubble(x, y) {
+    if (isMouseOnLandingPage) {
+      const bubbleContainer = document.getElementById('bubbleContainer');
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      // Set bubble content to either 0 or 1 randomly
+      bubble.textContent = Math.random() < 0.5 ? "0" : "1";
+      bubble.style.left = x + 'px';
+      bubble.style.top = y + 'px';
+      if (bubble.textContent === '0') {
+        bubble.style.backgroundColor = '#FFCCCC'; // Light red color for '0'
+      } else {
+        bubble.style.backgroundColor = '#CCFFCC'; // Light green color for '1'
+      }
+      bubbleContainer.appendChild(bubble);
+      // Remove the bubble after 1 second
+      setTimeout(function() {
+        bubble.remove();
+      }, 1000);
+    }
+  }
+
+  // Populate bubbles following mouse cursor
+  document.addEventListener("mousemove", function(event) {
+    // Calculate random position around cursor for each bubble
+    const x = event.pageX + Math.random() * 40 - 20;
+    const y = event.pageY + Math.random() * 40 - 20;
+    createBubble(x, y);
+  });
+
+  // Event listener for mouse entering the landing page section
+  document.querySelector('.landing-page').addEventListener('mouseenter', function() {
+    isMouseOnLandingPage = true;
+  });
+
+  // Event listener for mouse leaving the landing page section
+  document.querySelector('.landing-page').addEventListener('mouseleave', function() {
+    isMouseOnLandingPage = false;
+  });
+});
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const rotatingText = document.querySelector('.rotating-text');
+    const landingPage = document.querySelector('.landing-page');
+
+    landingPage.addEventListener('mousemove', function(event) {
+      const centerX = rotatingText.offsetLeft + rotatingText.offsetWidth / 2;
+      const centerY = rotatingText.offsetTop + rotatingText.offsetHeight / 2;
+      const angleX = (event.pageY - centerY) / 30; // Adjust division factor for subtle rotation
+      const angleY = (centerX - event.pageX) / 30; // Adjust division factor for subtle rotation
+      rotatingText.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`; // Apply rotation along X and Y axes
+    });
+
+    landingPage.addEventListener('mouseleave', function() {
+      rotatingText.style.transform = 'none'; // Reset rotation when mouse leaves landing page
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const currentYearSpan = document.getElementById('currentYear');
+    const currentYear = new Date().getFullYear();
+    currentYearSpan.textContent = currentYear;
+  });
+  document.addEventListener("DOMContentLoaded", function() {
+    const footer = document.querySelector('.footer-snow');
+    const numberOfSnowflakes = 20;
+
+    // Function to generate a random number between min and max
+    function getRandomNumber(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    // Create snowflakes and append them to the footer
+    for (let i = 0; i < numberOfSnowflakes; i++) {
+      const snowflake = document.createElement('img');
+      snowflake.classList.add('snowflake');
+      snowflake.src = 'coding.png'; 
+      snowflake.style.left = getRandomNumber(0, footer.offsetWidth) + 'px';
+      snowflake.style.animationDuration = getRandomNumber(5, 20) + 's';
+      snowflake.style.animationDelay = getRandomNumber(0, 5) + 's';
+      footer.appendChild(snowflake);
+    }
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const body = document.querySelector('body');
+  const aboutSection = document.getElementById('about');
+  const navbar = document.querySelector('.navbar');
+  const modeToggleIcon = document.querySelector('.mode-toggle-icon');
+  let isDarkMode = 0;
+
+  // Function to toggle light/dark mode
+  function toggleMode() {
+    if(isDarkMode === 1) {
+      modeToggleIcon.classList.remove('fa-moon');
+      modeToggleIcon.classList.add('fa-sun');
+      modeToggleIcon.style.color = "#FFD700";
+      body.classList.remove('dark-mode');
+      isDarkMode = 0;
+    } else {
+      modeToggleIcon.classList.remove('fa-sun');
+      modeToggleIcon.classList.add('fa-moon');
+      modeToggleIcon.style.color = "#fff";
+      body.classList.add('dark-mode');
+      isDarkMode = 1;
+    }
+    //document.body.classList.toggle('dark-mode');
+  }
+
+  // Event listener for mode toggle button click
+  modeToggleIcon.addEventListener('click', function() {
+    toggleMode();
+  });
+
+  // Function to check if the navbar is in the about section
+  function isInAboutSection() {
+    const rect = aboutSection.getBoundingClientRect();
+    return rect.top <= 0;
+  }
+
+  // Function to update visibility of mode toggle button
+  function updateModeToggleVisibility() {
+    if (isInAboutSection()) {
+      modeToggleIcon.style.display = 'inline';
+    } else {
+      modeToggleIcon.style.display = 'none';
+    }
+  }
+
+  // Event listener for scroll to update mode toggle visibility
+  window.addEventListener('scroll', function() {
+    updateModeToggleVisibility();
+  });
+
+  // Call the function initially to set visibility based on initial scroll position
+  updateModeToggleVisibility();
+});
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const prevTabButton = document.getElementById('prevTab');
+  const nextTabButton = document.getElementById('nextTab');
+  const tabs = document.querySelectorAll('.nav-tabs .nav-link');
+  const tabItems = document.querySelectorAll('#resumeTabs .nav-item');
+  const tabContent = document.querySelectorAll('.tab-content .tab-pane');
+
+  let activeTabIndex = 0;
+
+  // Function to switch to the previous tab
+  const switchToPrevTab = () => {
+    tabs[activeTabIndex].classList.remove('active');
+    tabContent[activeTabIndex].classList.remove('show', 'active');
+    tabItems[activeTabIndex].classList.add('d-none');
+    activeTabIndex = activeTabIndex === 0 ? tabs.length - 1 : activeTabIndex - 1;
+    tabs[activeTabIndex].classList.add('active');
+    tabContent[activeTabIndex].classList.add('show', 'active');
+    tabItems[activeTabIndex].classList.remove('d-none');
+    animateTabContent();
+  };
+
+  // Function to switch to the next tab
+  const switchToNextTab = () => {
+    tabs[activeTabIndex].classList.remove('active');
+    tabContent[activeTabIndex].classList.remove('show', 'active');
+    tabItems[activeTabIndex].classList.add('d-none');
+    activeTabIndex = activeTabIndex === tabs.length - 1 ? 0 : activeTabIndex + 1;
+    tabs[activeTabIndex].classList.add('active');
+    tabContent[activeTabIndex].classList.add('show', 'active');
+    tabItems[activeTabIndex].classList.remove('d-none');
+    animateTabContent();
+  };
+
+  // Function to animate tab content
+  const animateTabContent = () => {
+    tabContent[activeTabIndex].style.opacity = 0;
+    setTimeout(() => {
+      tabContent[activeTabIndex].style.opacity = 1;
+    }, 200);
+  };
+
+  // Event listener for previous tab button
+  prevTabButton.addEventListener('click', switchToPrevTab);
+
+  // Event listener for next tab button
+  nextTabButton.addEventListener('click', switchToNextTab);
+
+  // Update activeTabIndex on tab click
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      tabs[activeTabIndex].classList.remove('active');
+      tabContent[activeTabIndex].classList.remove('show', 'active');
+      tabItems[activeTabIndex].classList.add('d-none');
+      tab.classList.add('active');
+      tabContent[index].classList.add('show', 'active');
+      tabItems[index].classList.remove('d-none');
+      activeTabIndex = index;
+      animateTabContent();
+    });
+  });
+
+});
+
+
+</script>
+
+</body>
 </html>
