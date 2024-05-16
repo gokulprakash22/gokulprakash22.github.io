@@ -381,11 +381,6 @@
   background-color: #f8f9fa; /* Background color for unselected tabs */
 }
 
-.nav-tabs .nav-link:hover {
-  background-color: #f0f0f0; /* Background color on hover */
-  transform: translateY(-10%) scale(1.1); /* Scale up by 20% on hover */
-}
-
 .nav-tabs .nav-link.active {
   color: #fff; /* Text color for active tab */
   background-color: #0B2E64; /* Background color for active tab */
@@ -414,10 +409,6 @@
   background-color: transparent; /* Transparent underline for inactive tabs */
   transform: translateX(-50%);
   transition: all 0.3s ease;
-}
-
-.nav-tabs .nav-link:hover::before {
-  width: 50px; /* Increase width of underline on hover */
 }
 
 /* Tab content */
@@ -494,10 +485,6 @@
   transition: all 0.3s ease;
 }
 
-.tab-arrow:hover {
-  transform: translateY(-50%) scale(1.2); /* Scale up by 20% on hover */
-}
-
 .tab-arrow.left {
   left: 10px;
 }
@@ -559,6 +546,18 @@
   .navbar-nav li:hover {
     transition: all 0.3s ease;
     transform: scale(1.1); /* Scale up by 20% on hover */
+  }
+
+  .nav-tabs .nav-link:hover {
+    transform: translateY(-10%) scale(1.1); /* Scale up by 20% on hover */
+  }
+
+  .nav-tabs .nav-link:hover::before {
+    width: 50px; /* Increase width of underline on hover */
+  }
+
+  .tab-arrow:hover {
+    transform: translateY(-50%) scale(1.2); /* Scale up by 20% on hover */
   }
 }
 
@@ -1137,49 +1136,48 @@
         <!-- Sample data for experience -->
         <div class="card mb-3">
           <div class="card-body">
-            <h5 class="card-title">Senior Software Engineer</h5>
-            <p class="card-text">EY Global Delivery Services India LLP, Chennai</p>
-            <p class="card-text">Duration: Apr 2023 - Present</p>
+            <div class="row align-items-center">
+              <div class="col-12 text-center mb-3">
+                <h5 class="card-title">Senior Software Engineer</h5>
+              </div>
+              <div class="col-12 text-center mb-3">
+                <img src="ey.png" alt="Company Logo" style="width: 100px; height: 100px;">
+              </div>
+              <div class="col-12 text-center mb-3">
+                <p class="card-text">EY Global Delivery Services India LLP, Chennai</p>
+                <p class="card-text">Duration: Apr 2023 - Present</p>
+              </div>
+            </div>
             <ul class="card-text">
               <li>Developed a food ordering app comprising 5 microservices, developed using Java, Spring Boot, React, Apache Kafka, and MySQL.</li>
               <li>Built a Sustainability Enterprise Asset Management system enabling organizations to track carbon emissions from their assets, developed with Node.js, React, and MySQL.</li>
             </ul>
           </div>
         </div>
+        
+        
         <!-- Additional experience cards -->
         <div class="card mb-3">
           <div class="card-body">
-            <h5 class="card-title">Software Engineer</h5>
-            <p class="card-text">EY Global Delivery Services India LL, Chennai</p>
-            <p class="card-text">Duration: Aug 2021 - Apr 2023</p>
+            <div class="row align-items-center">
+              <div class="col-12 text-center mb-3">
+                <h5 class="card-title">Software Engineer</h5>
+              </div>
+              <div class="col-12 text-center mb-3">
+                <img src="ey.png" alt="Company Logo" style="width: 100px; height: 100px;">
+              </div>
+              <div class="col-12 text-center mb-3">
+                <p class="card-text">EY Global Delivery Services India LLP, Chennai</p>
+                <p class="card-text">Duration: Aug 2021 - Apr 2023</p>
+              </div>
+            </div>
             <ul class="card-text">
               <li>Provisioned and monitored 60+ multi-regional virtual machines along with various Azure services, and orchestrated Azure infrastructure through Terraform and Ansible.</li>
               <li>Successfully architected 10+ customized IBM Cloud solutions and provisioned diverse IBM Cloud services tailored to meet specific client requirements.</li>
             </ul>
           </div>
         </div>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Software Engineer Intern</h5>
-            <p class="card-text">EY Global Delivery Services India LLP, Chennai</p>
-            <p class="card-text">Duration: Feb 2021 - June 2021</p>
-            <ul class="card-text">
-              <li>Acquired training in Java, design patterns, Spring Boot, MySQL, and microservices with Apache Kafka.</li>
-              <li>Applied skills to develop a sample e-commerce website, showcasing proficiency in software development.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Remote Intern</h5>
-            <p class="card-text">Tactii (Formerly TalentAccurate), Canada</p>
-            <p class="card-text">Duration: July 2020 - Oct 2020</p>
-            <ul class="card-text">
-              <li>Led backend team in developing a web platform connecting organisations with budding ML and data science talents using Python, Flask and MongoDB.</li>
-              <li>Acquired hands-on training in implementating containerisation techniques using Docker and Kubernetes.</li>
-            </ul>
-          </div>
-        </div>
+        
         <!-- Add more cards for additional experiences -->
       </div>
       <!-- Education tab content -->
@@ -1187,27 +1185,37 @@
         <!-- Sample data for education -->
         <div class="card mb-3">
           <div class="card-body">
-            <h5 class="card-title">B.E., Computer Science and Engineering</h5>
-            <p class="card-text">St. Joseph's College of Engineering, Chennai (Affiliated to Anna University)</p>
-            <p class="card-text">Graduation Year: 2021</p>
-            <p class="card-text">Graduated with First Class with Distinction, achieving a CGPA of 8.72.</p>
+            <div class="row align-items-center">
+              <div class="col-12 text-center mb-3">
+                <h5 class="card-title">B.E., Computer Science and Engineering</h5>
+              </div>
+              <div class="col-12 text-center mb-3">
+                <img src="st.png" alt="Institution Logo" style="width: 150px; height: 150px;">
+              </div>
+              <div class="col-12 text-center mb-3">
+                <p class="card-text">St. Joseph's College of Engineering, Chennai (Affiliated to Anna University)</p>
+              <p class="card-text">Graduation Year: 2021</p>
+              <p class="card-text">Achieved First Class with Distinction, with a CGPA of 8.72.</p>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Additional education cards -->
         <div class="card mb-3">
           <div class="card-body">
-            <h5 class="card-title">Higher Secondary Certificate (HSC)</h5>
-            <p class="card-text">Shree Niketan Matriculation Higher Secondary School, Thiruvallur</p>
-            <p class="card-text">Graduation Year: 2017</p>
-            <p class="card-text">Completed with excellent results and a score of 96.25%.</p>
-          </div>
-        </div>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Secondary School Leaving Certificate (SSLC)</h5>
-            <p class="card-text">Shree Niketan Matriculation Higher Secondary School, Thiruvallur</p>
-            <p class="card-text">Graduation Year: 2015</p>
-            <p class="card-text">Achieved outstanding results with a score of 98.20%.</p>
+            <div class="row align-items-center">
+              <div class="col-12 text-center mb-3">
+                <h5 class="card-title">Higher Secondary Certificate (HSC)</h5>
+              </div>
+              <div class="col-12 text-center mb-3">
+                <img src="sh.png" alt="Institution Logo" style="width: 150px; height: 100px;">
+              </div>
+              <div class="col-12 text-center mb-3">
+                <p class="card-text">Shree Niketan Matriculation Higher Secondary School, Thiruvallur</p>
+                <p class="card-text">Graduation Year: 2017</p>
+                <p class="card-text">Completed with excellent results and a score of 96.25%.</p>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Add more cards for additional education -->
@@ -1232,12 +1240,12 @@
   <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title">Web Frameworks</h5>
-      <p class="card-text">Experienced with modern web technologies such as Spring Boot, Node.js, Flask and React.js.</p>
+      <p class="card-text">Experienced with modern web technologies such as Spring Boot, Node.js, Flask and React.</p>
       <p class="card-text mt-3">
         <span class="badge badge-primary mr-2 mt-2">Spring Boot</span>
         <span class="badge badge-primary mr-2 mt-2">Node.js</span>
         <span class="badge badge-primary mr-2 mt-2">Flask</span>
-        <span class="badge badge-primary mt-2">React.js</span>
+        <span class="badge badge-primary mt-2">React</span>
       </p>
     </div>
   </div>
@@ -1254,7 +1262,7 @@
   <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title">Architectures and Build Tools</h5>
-      <p class="card-text">Proficient in Microservices architecture, adept at implementing design patterns, experienced with Kafka for event streaming, skilled in JUnit for testing, and proficient in Maven for project management.</p>
+      <p class="card-text">Proficient in Microservices architecture, adept at implementing design patterns, experienced with Kafka for event streaming, skilled in JUnit for testing, and knowledgeable in Maven for project management.</p>
       <p class="card-text mt-3">
         <span class="badge badge-primary mr-2 mt-2">Microservices</span>
         <span class="badge badge-primary mr-2 mt-2">Design patterns</span>
@@ -1267,7 +1275,7 @@
   <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title">Cloud Platforms</h5>
-      <p class="card-text">Familiar with various cloud platforms such as Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and IBM Cloud.</p>
+      <p class="card-text">Familiar with multiple cloud platforms such as Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and IBM Cloud.</p>
       <p class="card-text mt-3">
         <span class="badge badge-primary mr-2 mt-2">AWS</span>
         <span class="badge badge-primary mr-2 mt-2">Azure</span>
