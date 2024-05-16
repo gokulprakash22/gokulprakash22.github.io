@@ -665,14 +665,14 @@
 }
 
 #contact .contact-card,
-.social-card {
+#contact .social-card {
   border: 2px solid #0B2E64;
   transition: border-color 0.3s ease; /* Add transition for smooth effect */
 }
 
 #contact .contact-card:hover,
-.social-card:hover {
-  border-color: rgba(11, 46, 100, 0.5); /* Adjust border color on hover for glowing effect */
+#contact .social-card:hover {
+  box-shadow: 0 0 10px rgba(11, 46, 100, 0.5); /* Adjust border color on hover for glowing effect */
 }
 
 #contact .card h2 {
@@ -953,13 +953,13 @@
 }
 
 .dark-mode #contact .contact-card,
-.social-card {
+.dark-mode #contact .social-card {
   border: 2px solid #777 !important;
 }
 
 .dark-mode #contact .contact-card:hover,
-.social-card:hover {
-  border-color: rgba(255, 255, 255, 0.5) !important;
+.dark-mode #contact .social-card:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
 }
 
 .dark-mode #contact .card h2 {
