@@ -234,7 +234,7 @@
 /* CSS for snowflake animation */
 .footer-snow {
   position: relative;
-  height: 150px; /* Increased height of the footer */
+  height: 35vh; /* Increased height of the footer */
   overflow: hidden; /* Hide overflow content below footer */
 }
 
@@ -245,6 +245,7 @@
   width: 40px;
   z-index: 9999;
   animation: snowfall linear infinite;
+  cursor: pointer;
 }
 
 @keyframes snowfall {
@@ -258,7 +259,7 @@
 
 /* CSS for mode toggle button */
 .mode-toggle-icon {
-  color: #FFD700;
+  color: #D3D3D3;
   border: none;
   background: transparent;
   font-size: 1.2rem;
@@ -293,7 +294,7 @@
         font-size: 1rem; /* Reduced font size for smaller screens */
       }
       .footer-snow .snowflake {
-        width: 20px;
+        width: 30px;
       }
       .navbar-brand {
         font-size: 1.2rem;
@@ -811,7 +812,7 @@
   left: 0;
   right: 0;
   height: 0px; /* Thickness of the border */
-  background: linear-gradient(to right, rgba(11, 46, 100, 0.2), rgba(11, 46, 100, 0.8), rgba(11, 46, 100, 0.2)); /* Gradient for the border */
+  background: linear-gradient(to right, rgba(11, 46, 100, 0.8), rgba(11, 46, 100, 0.8), rgba(11, 46, 100, 0.8)); /* Gradient for the border */
 }
 
 /* Top border pseudo-element */
@@ -831,6 +832,21 @@
   #resume::before, #resume::after {
     height: 8px;
   }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.pop-animation {
+    animation: pop 1s forwards !important;
 }
 
 /* Dark mode */
@@ -991,7 +1007,7 @@
 }
 
 .dark-mode #resume::before,.dark-mode #resume::after {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2)) !important;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) !important;
 }
 
 
@@ -1005,7 +1021,7 @@
     <div>
       <a class="navbar-brand" href="#"><span>GOKUL PRAKASH</span></a>
       <!-- Toggle button for light/dark mode -->
-      <i class="mode-toggle-icon fas fa-sun"></i>
+      <i class="mode-toggle-icon fas fa-moon"></i>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -1055,16 +1071,16 @@
           <div id="badgeCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="badge1.png" class="d-block mx-auto badges" alt="Badge 1">
+                <img src="badges/badge1.png" class="d-block mx-auto badges" alt="Badge 1">
               </div>
               <div class="carousel-item">
-                <img src="badge2.png" class="d-block mx-auto badges" alt="Badge 2">
+                <img src="badges/badge2.png" class="d-block mx-auto badges" alt="Badge 2">
               </div>
               <div class="carousel-item">
-                <img src="badge3.png" class="d-block mx-auto badges" alt="Badge 3">
+                <img src="badges/badge3.png" class="d-block mx-auto badges" alt="Badge 3">
               </div>
               <div class="carousel-item">
-                <img src="badge4.png" class="d-block mx-auto badges" alt="Badge 4">
+                <img src="badges/badge4.png" class="d-block mx-auto badges" alt="Badge 4">
               </div>
               <!-- Repeat as needed for more badges -->
             </div>
@@ -1141,7 +1157,7 @@
                 <h5 class="card-title">Senior Software Engineer</h5>
               </div>
               <div class="col-12 text-center mb-3">
-                <img src="ey.png" alt="Company Logo" style="width: 100px; height: 100px;">
+                <img src="resume/ey.png" alt="Company Logo" style="width: 100px; height: 100px;">
               </div>
               <div class="col-12 text-center mb-3">
                 <p class="card-text">EY Global Delivery Services India LLP, Chennai</p>
@@ -1164,7 +1180,7 @@
                 <h5 class="card-title">Software Engineer</h5>
               </div>
               <div class="col-12 text-center mb-3">
-                <img src="ey.png" alt="Company Logo" style="width: 100px; height: 100px;">
+                <img src="resume/ey.png" alt="Company Logo" style="width: 100px; height: 100px;">
               </div>
               <div class="col-12 text-center mb-3">
                 <p class="card-text">EY Global Delivery Services India LLP, Chennai</p>
@@ -1190,7 +1206,7 @@
                 <h5 class="card-title">B.E., Computer Science and Engineering</h5>
               </div>
               <div class="col-12 text-center mb-3">
-                <img src="st.png" alt="Institution Logo" style="width: 150px; height: 150px;">
+                <img src="resume/st.png" alt="Institution Logo" style="width: 150px; height: 150px;">
               </div>
               <div class="col-12 text-center mb-3">
                 <p class="card-text">St. Joseph's College of Engineering, Chennai (Affiliated to Anna University)</p>
@@ -1208,7 +1224,7 @@
                 <h5 class="card-title">Higher Secondary Certificate (HSC)</h5>
               </div>
               <div class="col-12 text-center mb-3">
-                <img src="sh.png" alt="Institution Logo" style="width: 150px; height: 100px;">
+                <img src="resume/sh.png" alt="Institution Logo" style="width: 150px; height: 100px;">
               </div>
               <div class="col-12 text-center mb-3">
                 <p class="card-text">Shree Niketan Matriculation Higher Secondary School, Thiruvallur</p>
@@ -1226,13 +1242,12 @@
   <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title">Programming Languages</h5>
-      <p class="card-text">Proficient in various programming languages including JavaScript, Python, Java, TypeScript, and Shell Scripting.</p>
+      <p class="card-text">Proficient in various programming languages including JavaScript, Python, Java, and TypeScript.</p>
       <p class="card-text mt-3">
         <span class="badge badge-primary mr-2 mt-2">Java</span>
         <span class="badge badge-primary mr-2 mt-2">Python3</span>
         <span class="badge badge-primary mt-2">JavaScript</span>
         <span class="badge badge-primary mt-2">TypeScript</span>
-        <span class="badge badge-primary mt-2">Shell Scripting</span>
       </p>
     </div>
   </div>
@@ -1240,11 +1255,10 @@
   <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title">Web Frameworks</h5>
-      <p class="card-text">Experienced with modern web technologies such as Spring Boot, Node.js, Flask and React.</p>
+      <p class="card-text">Experienced with modern web technologies such as Spring Boot, Node.js, and React.</p>
       <p class="card-text mt-3">
         <span class="badge badge-primary mr-2 mt-2">Spring Boot</span>
         <span class="badge badge-primary mr-2 mt-2">Node.js</span>
-        <span class="badge badge-primary mr-2 mt-2">Flask</span>
         <span class="badge badge-primary mt-2">React</span>
       </p>
     </div>
@@ -1299,17 +1313,6 @@
       </p>
     </div>
   </div>
-  <div class="card mb-3">
-    <div class="card-body">
-      <h5 class="card-title">Operating Systems</h5>
-      <p class="card-text">Experienced with Linux, macOS, and Windows for flexible development across various platforms.</p>
-      <p class="card-text mt-3">
-        <span class="badge badge-primary mr-2 mt-2">Linux</span>
-        <span class="badge badge-primary mr-2 mt-2">macOs</span>
-        <span class="badge badge-primary mr-2 mt-2">Windows</span>
-      </p>
-    </div>
-  </div>
 </div>
 
 <!-- Achievements tab content -->
@@ -1319,8 +1322,14 @@
     <div class="card-body">
       <h5 class="card-title">Honours</h5>
       <div class="card-text">
-        <p>&#11088; Honoured with the EY Cloud Silver Badge for my expertise and works in the cloud domain.</p>
-        <p>&#11088; Honored as Star Performer while working in the Cognizant Student Club.</p>
+        <p>&#11088; Honoured with the EY Cloud Silver Badge for my expertise and works in the cloud domain.
+          <a href="https://www.credly.com/badges/c7e61a66-1409-49ed-8aa9-013f8184222a/public_url" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt external-link-icon"></i>
+          </a></p>
+        <p>&#11088; Honored as Star Performer while working in the Cognizant Student Club.
+          <a href="certs/cognizant.pdf" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt external-link-icon"></i>
+          </a></p>
       </div>
     </div>
   </div>
@@ -1333,7 +1342,10 @@
           <a href="https://gokulprakash22.github.io/e-catalogue/" target="_blank" rel="noopener noreferrer">
           <i class="fas fa-external-link-alt external-link-icon"></i>
         </a></p>
-        <p>&#127942; Secured 1st place in the code challenge event at the Intra-Department Symposium 2019.</p>
+        <p>&#127942; Secured 1st place in the code challenge event at the Intra-Department Symposium 2019.
+          <a href="certs/intra-department.pdf" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-external-link-alt external-link-icon"></i>
+        </a></p>
       </div>
     </div>
   </div>
@@ -1428,10 +1440,11 @@
 
 
 <!-- Footer -->
-<footer class="text-white text-center py-5 footer-snow">
+<footer class="text-white text-center py-5 footer-snow d-flex justify-content-center align-items-center">
   <div class="container">
     <p>&copy; <span id="currentYear"></span> Gokul Prakash. All rights reserved.</p>
   </div>
+  <audio id="clickSound" src="pop.mp3"></audio>
 </footer>
 
   <!-- Bootstrap JS -->
@@ -1617,7 +1630,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   document.addEventListener("DOMContentLoaded", function() {
     const footer = document.querySelector('.footer-snow');
-    const numberOfSnowflakes = 20;
+    const numberOfSnowflakes = 10;
 
     // Function to generate a random number between min and max
     function getRandomNumber(min, max) {
@@ -1632,6 +1645,16 @@ document.addEventListener("DOMContentLoaded", function() {
       snowflake.style.left = getRandomNumber(0, footer.offsetWidth) + 'px';
       snowflake.style.animationDuration = getRandomNumber(5, 20) + 's';
       snowflake.style.animationDelay = getRandomNumber(0, 5) + 's';
+      snowflake.addEventListener('click', function() {
+        const audio = document.getElementById('clickSound');
+        audio.currentTime = 0;
+        audio.play();
+        const bubble = this;
+        bubble.classList.add('pop-animation');
+        bubble.addEventListener('animationend', function() {
+          bubble.classList.remove('pop-animation');
+        });
+    });
       footer.appendChild(snowflake);
     }
   });
@@ -1647,15 +1670,15 @@ document.addEventListener("DOMContentLoaded", function() {
   // Function to toggle light/dark mode
   function toggleMode() {
     if(isDarkMode === 1) {
-      modeToggleIcon.classList.remove('fa-moon');
-      modeToggleIcon.classList.add('fa-sun');
-      modeToggleIcon.style.color = "#FFD700";
+      modeToggleIcon.classList.remove('fa-sun');
+      modeToggleIcon.classList.add('fa-moon');
+      modeToggleIcon.style.color = "#D3D3D3";
       body.classList.remove('dark-mode');
       isDarkMode = 0;
     } else {
-      modeToggleIcon.classList.remove('fa-sun');
-      modeToggleIcon.classList.add('fa-moon');
-      modeToggleIcon.style.color = "#fff";
+      modeToggleIcon.classList.remove('fa-moon');
+      modeToggleIcon.classList.add('fa-sun');
+      modeToggleIcon.style.color = "#FFD700";
       body.classList.add('dark-mode');
       isDarkMode = 1;
     }
