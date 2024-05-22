@@ -19,21 +19,24 @@
       font-family: "Poetsen One", sans-serif;
       font-weight: 400;
       font-style: normal;
+      color: #000;
     }
     
     /* Custom styles for landing page */
     .landing-page {
-      background-image: url('banner.jpg');
-      background-size: cover;
+      background-image: url('banner.jpeg');
+      background-color: #000;
+      background-size: contain;
       background-position: center; /* Center the background image */
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: flex-end; /* Align content to bottom */
       align-items: center;
-      color: white;
+      color: #FFF;
       text-align: center;
       padding-bottom: 50px;
+      background-repeat: no-repeat;
     }
     .landing-page h1 {
       font-size: 3rem; /* Reduced font size */
@@ -54,13 +57,14 @@
       font-weight: bold;
       font-size: 1.5rem; /* Increase font size */
       text-transform: uppercase; /* Capitalize text */
+      color: #FFF !important;
     }
     .navbar-brand span {
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Glow effect */
     }
     /* Adjust navbar links font style */
     .navbar-nav .nav-link {
-      color: white !important; /* White color for navbar links */
+      color: #FFF; /* White color for navbar links */
       font-size: 1.2rem; /* Increase font size */
       margin-right: 4px;
     }
@@ -82,13 +86,13 @@
     }
     /* Opaque navbar */
     .navbar.opaque {
-      background-color: #0B2E64 !important;
+      background-color: #000 !important;
       transition: background-color 0.3s ease;
     }
     /* Footer styles */
     footer {
-      background-color: #0B2E64 !important; /* Footer background color */
-      color: white; /* Text color */
+      background-color: #000 !important; /* Footer background color */
+      color: #FFF; /* Text color */
     }
     /* Hide scrollbar */
     body::-webkit-scrollbar {
@@ -158,7 +162,7 @@
     .about-description {
       font-size: 1.2rem; /* Increase font size */
       line-height: 1.6; /* Increase line height for better readability */
-      color: #333; /* Darker text color for better contrast */
+      color: #000; /* Darker text color for better contrast */
     }
 
     /* Add background color to about section */
@@ -228,24 +232,25 @@
 
   /* Custom style for active pagination indicator */
   .carousel-indicators .active {
-    background-color: #0B2E64; /* Change to match your navigation bar color */
+    background-color: #000; /* Change to match your navigation bar color */
   }
 
 /* CSS for snowflake animation */
 .footer-snow {
   position: relative;
-  height: 35vh; /* Increased height of the footer */
+  height: 30vh; /* Increased height of the footer */
   overflow: hidden; /* Hide overflow content below footer */
 }
 
 .footer-snow .snowflake {
   position: absolute;
   top: -50px; /* Adjusted to start snowflakes just above footer */
-  color: #f8f9fa;
   width: 40px;
   z-index: 9999;
   animation: snowfall linear infinite;
   cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 100%;
 }
 
 @keyframes snowfall {
@@ -259,7 +264,7 @@
 
 /* CSS for mode toggle button */
 .mode-toggle-icon {
-  color: #D3D3D3;
+  color: #FFD700;
   border: none;
   background: transparent;
   font-size: 1.2rem;
@@ -313,19 +318,9 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Bottom shadow */
 }
 
-/* Top border pseudo-element */
-#resume::before {
-  top: 0; /* Position at the top */
-}
-
-/* Bottom border pseudo-element */
-#resume::after {
-  bottom: 0; /* Position at the bottom */
-}
-
 /* Section heading */
 #resume h1 {
-  color: #333; 
+  color: #000; 
   margin-bottom: 30px;
   text-align: center;
 }
@@ -338,7 +333,7 @@
 
 /* Circular download button */
 .download-btn {
-  background-color: #0B2E64;
+  background-color: #000;
   color: #fff;
   border-radius: 50%;
   width: 60px;
@@ -371,50 +366,28 @@
 }
 
 .nav-tabs .nav-link {
-  color: #555;
-  border: 2px solid #f0f0f0;
+  color: #000;
+  border: 2px solid #777;
   border-radius: 15px 15px 0 0; /* Rounded top corners */
   font-size: 1.2rem;
   transition: all 0.3s ease;
   position: relative;
   padding: 10px 20px; /* Adjust padding for better spacing */
   margin: 0 5px; /* Add margin for spacing between tabs */
-  background-color: #f8f9fa; /* Background color for unselected tabs */
+  background-color: #f0f0f0; /* Background color for unselected tabs */
 }
 
 .nav-tabs .nav-link.active {
   color: #fff; /* Text color for active tab */
-  background-color: #0B2E64; /* Background color for active tab */
+  background-color: #000; /* Background color for active tab */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for active tab */
   border-bottom: none; /* Remove bottom border for active tab */
   z-index: 2; /* Ensure active tab appears on top */
 }
 
-.nav-tabs .nav-link.active::before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 50px;
-  height: 2px;
-  transition: all 0.3s ease;
-}
-
-.nav-tabs .nav-link:not(.active)::before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: transparent; /* Transparent underline for inactive tabs */
-  transform: translateX(-50%);
-  transition: all 0.3s ease;
-}
-
 /* Tab content */
 .tab-content {
-  border-top: 4px solid #0B2E64;
+  border-top: 4px solid #000;
   min-height: 70vh;
   background-color: #fff;
   border-radius: 15px 15px 15px 15px; /* Rounded bottom corners */
@@ -442,14 +415,14 @@
 }
 
 .card-title {
-  color: #0B2E64; /* Title color */
+  color: #000; /* Title color */
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
 .card-text {
   font-size: 1.1rem;
-  color: #555; /* Text color */
+  color: #000; /* Text color */
   margin-bottom: 10px;
 }
 
@@ -458,7 +431,7 @@
   padding: 0.5rem 1rem;
   border-radius: 20px;
   margin-right: 10px;
-  background-color: #0B2E64; /* Badge background color */
+  background-color: #000; /* Badge background color */
   color: #fff; /* Badge text color */
   font-weight: 100 !important;
 }
@@ -466,7 +439,7 @@
 
 /* Badge styles */
 .badge-primary {
-  background-color: #0B2E64;
+  background-color: #000;
   color: #fff;
 }
 
@@ -475,7 +448,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #0B2E64;
+  background-color: #000;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -501,6 +474,7 @@
 .card {
   margin-bottom: 30px;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  border: 2px solid #000 !important;
 }
 
 .card:hover {
@@ -551,10 +525,7 @@
 
   .nav-tabs .nav-link:hover {
     transform: translateY(-10%) scale(1.1); /* Scale up by 20% on hover */
-  }
-
-  .nav-tabs .nav-link:hover::before {
-    width: 50px; /* Increase width of underline on hover */
+    border: 2px solid #777;
   }
 
   .tab-arrow:hover {
@@ -583,7 +554,7 @@
   transform: translateY(-50%); /* Center bullet point vertically */
   width: 10px; /* Width of the bullet point */
   height: 10px; /* Height of the bullet point */
-  background-color: #0B2E64; /* Color of the bullet point */
+  background-color: #000; /* Color of the bullet point */
   border-radius: 50%; /* Make bullet point round */
 }
 
@@ -639,7 +610,7 @@
 }
 
 #contact .contact-heading {
-  color: #333;
+  color: #000;
 }
 
 #contact .container {
@@ -667,7 +638,7 @@
 
 #contact .contact-card,
 #contact .social-card {
-  border: 2px solid #0B2E64;
+  border: 2px solid #000;
   transition: border-color 0.3s ease; /* Add transition for smooth effect */
 }
 
@@ -677,13 +648,13 @@
 }
 
 #contact .card h2 {
-  color: #0B2E64;
+  color: #000;
   margin-bottom: 20px;
   font-size: 1.8rem;
 }
 
 #contact .card p {
-  color: #555;
+  color: #777;
   line-height: 1.8;
   font-size: 1rem;
 }
@@ -731,11 +702,11 @@
 }
 
 #contact .social-links a:hover {
-  color: #0B2E64;
+  color: #000;
 }
 
 #resume p a:hover {
-  color: #0B2E64;
+  color: #000;
 }
 
 #contact .card ul li {
@@ -782,7 +753,7 @@
 
 /* Active link styling */
 .navbar-nav .active {
-  text-shadow: 0 0 8px #f0f0f0;
+  color: #fff !important;
 }
 
 #scroll-banner-1 {
@@ -806,31 +777,19 @@
 }
 
 /* Top and bottom borders */
-#resume::before, #resume::after {
+.sep {
   content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 0px; /* Thickness of the border */
-  background: linear-gradient(to right, rgba(11, 46, 100, 0.8), rgba(11, 46, 100, 0.8), rgba(11, 46, 100, 0.8)); /* Gradient for the border */
-}
-
-/* Top border pseudo-element */
-#resume::before {
-  top: 0; /* Position at the top */
-}
-
-/* Bottom border pseudo-element */
-#resume::after {
-  bottom: 0; /* Position at the bottom */
+  height: 4px; /* Thickness of the border */
+  background-color: #000; /* Gradient for the border */
 }
 
 @media (max-width: 992px) {
   #scroll-banner-1, #scroll-banner-2  {
     display: none;
   }
-  #resume::before, #resume::after {
-    height: 8px;
+
+  .sep-mob {
+    display: none;
   }
 }
 
@@ -852,22 +811,26 @@
 /* Dark mode */
 
 .dark-mode {
-    background-color: #333 !important;
+    background-color: #000 !important;
     color: #FFF !important;
 }
 
+.dark-mode .sep {
+  background-color: #fff; /* Gradient for the border */
+}
+
 .dark-mode #about {
-    background-color: #333 !important;
+    background-color: #000 !important;
     color: #FFF !important;
 }
 
 .dark-mode .about-description {
-    background-color: #333 !important;
+    background-color: #000 !important;
     color: #FFF !important;
 }
 
 .dark-mode .navbar.opaque {
-  background-color: #777 !important;
+  background-color: #333 !important;
 }
 
 .dark-mode .carousel-indicators li {
@@ -875,53 +838,50 @@
 }
 
 .dark-mode .carousel-indicators .active {
-  background-color: #fff !important;
+  background-color: #FFF !important;
 }
 
 .dark-mode #resume {
-    background-color: #333 !important;
+    background-color: #000 !important;
     color: #FFF !important;
 }
 
 .dark-mode #resume h1 {
-  color: #fff !important;
+  color: #FFF !important;
 }
 
 .dark-mode .download-btn {
-  background-color: #777 !important;
+  background-color: #333 !important;
 }
 
 .dark-mode .nav-tabs {
-  background-color: #333 !important;
+  background-color: #000 !important;
 }
 
 .dark-mode .nav-tabs .nav-link {
-  color: #555 !important;
-  border: 2px solid #f0f0f0 !important;
-  background-color: #f8f9fa !important;
-}
-
-.dark-mode .nav-tabs .nav-link:hover {
-  background-color: #f0f0f0 !important;
+  color: #000 !important;
+  border: 2px solid #777 !important;
+  background-color: #CCC !important;
 }
 
 .dark-mode .nav-tabs .nav-link.active {
-  color: #fff !important;
-  background-color: #777 !important;
+  color: #FFF !important;
+  background-color: #333 !important;
 }
 
 .dark-mode .tab-arrow {
-  background-color: #777 !important;
+  background-color: #333 !important;
 }
 
 .dark-mode .tab-content {
-  border-top: 4px solid #777 !important;
-  background-color: #333 !important;
+  border-top: 4px solid #fff !important;
+  background-color: #000 !important;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1) !important;
 }
 
 .dark-mode .card {
-  background-color: #333 !important;
+  border: 2px solid #333 !important;
+  background-color: #000 !important;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -930,37 +890,37 @@
 }
 
 .dark-mode .card-title {
-  color: #f8f9fa !important;
+  color: #FFF !important;
 }
 
 .dark-mode .card-text {
-  color: #fff !important;
+  color: #FFF !important;
 }
 
 .dark-mode .badge {
-  background-color: #777 !important;
-  color: #fff !important;
+  background-color: #333 !important;
+  color: #FFF !important;
 }
 
 .dark-mode .badge-primary {
-  background-color: #777 !important;
-  color: #fff !important;
+  background-color: #333 !important;
+  color: #FFF !important;
 }
 
 .dark-mode #resume .card ul li::before {
-  background-color: #777 !important;
+  background-color: #fff !important;
 }
 /*  */
 .dark-mode #contact {
-  background-color: #333 !important;
+  background-color: #000 !important;
 }
 
 .dark-mode #contact .contact-heading {
-  color: #fff !important;
+  color: #FFF !important;
 }
 
 .dark-mode #contact .card {
-  background-color: #333 !important;
+  background-color: #000 !important;
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -970,7 +930,7 @@
 
 .dark-mode #contact .contact-card,
 .dark-mode #contact .social-card {
-  border: 2px solid #777 !important;
+  border: 2px solid #333 !important;
 }
 
 .dark-mode #contact .contact-card:hover,
@@ -979,11 +939,11 @@
 }
 
 .dark-mode #contact .card h2 {
-  color: #f8f9fa !important;
+  color: #FFF !important;
 }
 
 .dark-mode #contact .card p {
-  color: #DDD !important;
+  color: #999 !important;
 }
 
 .dark-mode #contact .social-links a {
@@ -1003,17 +963,17 @@
 }
 
 .dark-mode footer {
-  background-color: #777 !important;
+  background-color: #333 !important;
 }
 
-.dark-mode #resume::before,.dark-mode #resume::after {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) !important;
+.dark-mode .footer-snow .snowflake {
+  border: none !important;
 }
 
 
   </style>
 </head>
-<body>
+<body class="dark-mode">
 
   <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top transparent">
@@ -1021,7 +981,7 @@
     <div>
       <a class="navbar-brand" href="#"><span>GOKUL PRAKASH</span></a>
       <!-- Toggle button for light/dark mode -->
-      <i class="mode-toggle-icon fas fa-moon"></i>
+      <i class="mode-toggle-icon fas fa-sun"></i>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -1057,6 +1017,7 @@
     <!-- Bubble container -->
     <div class="bubble-container" id="bubbleContainer"></div>
   </section>
+  <div class="sep"></div>
 
 
 <!-- About Section -->
@@ -1102,9 +1063,12 @@
     </div>
   </div>
 </section>
+<div class="sep"></div>
 
 <!-- Scroll Section 1 -->
 <section id="scroll-banner-1"></section>
+
+<div class="sep sep-mob"></div>
 
 
 <!-- Resume Section -->
@@ -1165,8 +1129,8 @@
               </div>
             </div>
             <ul class="card-text">
-              <li>Developed an online food ordering app comprising 5 microservices, with Java, Spring Boot, React, Apache Kafka, and MySQL.</li>
-              <li>Built a Sustainability Enterprise Asset Management system enabling organizations to track carbon emissions from their assets, using Node.js, React, and MySQL.</li>
+              <li>Developed a online food ordering app comprising 5 microservices, developed using Java, Spring Boot, React, Apache Kafka, and MySQL.</li>
+              <li>Built a Sustainability Enterprise Asset Management system enabling organizations to track carbon emissions from their assets, developed with Node.js, React, and MySQL.</li>
             </ul>
           </div>
         </div>
@@ -1242,7 +1206,7 @@
   <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title">Programming Languages</h5>
-      <p class="card-text">Proficient in various programming languages including Java, Python3, JavaScript, and TypeScript.</p>
+      <p class="card-text">Proficient in various programming languages including JavaScript, Python, Java, and TypeScript.</p>
       <p class="card-text mt-3">
         <span class="badge badge-primary mr-2 mt-2">Java</span>
         <span class="badge badge-primary mr-2 mt-2">Python3</span>
@@ -1266,7 +1230,7 @@
   <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title">Databases</h5>
-      <p class="card-text">Skilled in managing data with both SQL (MySQL) and NoSQL (MongoDB) databases.</p>
+      <p class="card-text">Skilled in managing data with both SQL(MySQL) and NoSQL(MongoDB) databases.</p>
       <p class="card-text mt-3">
         <span class="badge badge-primary mr-2 mt-2">MySQL</span>
         <span class="badge badge-primary mr-2 mt-2">MongoDB</span>
@@ -1373,8 +1337,11 @@
   </div>
 </section>
 
+<div class="sep sep-mob"></div>
+
 <!-- Scroll Section 2 -->
 <section id="scroll-banner-2"></section>
+<div class="sep"></div>
 
 <!-- Contact Section -->
 <section id="contact" class="py-5">
@@ -1427,17 +1394,7 @@
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
+<div class="sep"></div>
 
 <!-- Footer -->
 <footer class="text-white text-center py-5 footer-snow d-flex justify-content-center align-items-center">
@@ -1571,9 +1528,9 @@ document.addEventListener("DOMContentLoaded", function() {
       bubble.style.left = x + 'px';
       bubble.style.top = y + 'px';
       if (bubble.textContent === '0') {
-        bubble.style.backgroundColor = '#FFCCCC'; // Light red color for '0'
+        bubble.style.backgroundColor = '#FFAAAA'; // Light red color for '0'
       } else {
-        bubble.style.backgroundColor = '#CCFFCC'; // Light green color for '1'
+        bubble.style.backgroundColor = '#AAFFAA'; // Light green color for '1'
       }
       bubbleContainer.appendChild(bubble);
       // Remove the bubble after 1 second
@@ -1665,7 +1622,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const aboutSection = document.getElementById('about');
   const navbar = document.querySelector('.navbar');
   const modeToggleIcon = document.querySelector('.mode-toggle-icon');
-  let isDarkMode = 0;
+  let isDarkMode = 1;
 
   // Function to toggle light/dark mode
   function toggleMode() {
