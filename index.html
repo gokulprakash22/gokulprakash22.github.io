@@ -402,12 +402,7 @@
   background-color: #fff; /* Card background color */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
-}
-
-.card:hover {
-  transform: translateY(-5px); /* Hover effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transition: all 0.3s; /* Smooth transition */
 }
 
 .card-body {
@@ -472,14 +467,8 @@
 }
 
 .card {
-  margin-bottom: 30px;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  transition: all border-color 0.3s;
   border: 2px solid #000 !important;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
@@ -531,6 +520,11 @@
   .tab-arrow:hover {
     transform: translateY(-50%) scale(1.2); /* Scale up by 20% on hover */
   }
+
+  .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+    }
 }
 
 /* Style the bullet points */
@@ -631,20 +625,10 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
-#contact .card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-  transform: translateY(-5px); /* Add subtle lift effect on hover */
-}
-
 #contact .contact-card,
 #contact .social-card {
   border: 2px solid #000;
   transition: border-color 0.3s ease; /* Add transition for smooth effect */
-}
-
-#contact .contact-card:hover,
-#contact .social-card:hover {
-  box-shadow: 0 0 10px rgba(11, 46, 100, 0.5); /* Adjust border color on hover for glowing effect */
 }
 
 #contact .card h2 {
@@ -702,11 +686,11 @@
 }
 
 #contact .social-links a:hover {
-  color: #000;
+  color: #7CA6D8;
 }
 
 #resume p a:hover {
-  color: #000;
+  color: #7CA6D8;
 }
 
 #contact .card ul li {
@@ -889,10 +873,6 @@
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1) !important;
 }
 
-.dark-mode .card:hover {
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2) !important;
-}
-
 .dark-mode .card-title {
   color: #FFF !important;
 }
@@ -928,18 +908,9 @@
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1) !important;
 }
 
-.dark-mode #contact .card:hover {
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2) !important;
-}
-
 .dark-mode #contact .contact-card,
 .dark-mode #contact .social-card {
   border: 2px solid #333 !important;
-}
-
-.dark-mode #contact .contact-card:hover,
-.dark-mode #contact .social-card:hover {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
 }
 
 .dark-mode #contact .card h2 {
@@ -976,6 +947,23 @@
 
 .dark-mode .grey-text {
   color: #AAA !important;
+}
+
+@media (min-width: 992px) {
+  #contact .contact-card:hover,
+  #contact .social-card:hover {
+    box-shadow: 0 0 10px rgba(11, 46, 100, 0.5); /* Adjust border color on hover for glowing effect */
+  }
+
+  .dark-mode .card:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .dark-mode #contact .contact-card:hover,
+  .dark-mode #contact .social-card:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+  }
+
 }
 
 
@@ -1122,7 +1110,7 @@
       <!-- Experience tab content -->
       <div class="tab-pane fade show active" id="experience" role="tabpanel" aria-labelledby="experience-tab">
         <!-- Sample data for experience -->
-        <div class="card mb-3">
+        <div class="card mb-4">
           <div class="card-body">
             <div class="row align-items-center">
               <div class="col-12 text-center mb-3">
@@ -1145,7 +1133,7 @@
         
         
         <!-- Additional experience cards -->
-        <div class="card mb-3">
+        <div class="card mb-4">
           <div class="card-body">
             <div class="row align-items-center">
               <div class="col-12 text-center mb-3">
@@ -1171,7 +1159,7 @@
       <!-- Education tab content -->
       <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="education-tab">
         <!-- Sample data for education -->
-        <div class="card mb-3">
+        <div class="card mb-4">
           <div class="card-body">
             <div class="row align-items-center">
               <div class="col-12 text-center mb-3">
@@ -1189,7 +1177,7 @@
           </div>
         </div>
         <!-- Additional education cards -->
-        <div class="card mb-3">
+        <div class="card mb-4">
           <div class="card-body">
             <div class="row align-items-center">
               <div class="col-12 text-center mb-3">
@@ -1211,7 +1199,7 @@
     <!-- Skills tab content -->
 <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
   <!-- Sample data for skills -->
-  <div class="card mb-3">
+  <div class="card mb-4">
     <div class="card-body">
       <h5 class="card-title">Programming Languages</h5>
       <p class="card-text grey-text">Proficient in various programming languages including JavaScript, Python, Java, and TypeScript.</p>
@@ -1224,7 +1212,7 @@
     </div>
   </div>
   <!-- Additional skills cards -->
-  <div class="card mb-3">
+  <div class="card mb-4">
     <div class="card-body">
       <h5 class="card-title">Web Frameworks</h5>
       <p class="card-text grey-text">Experienced with modern web technologies such as Spring Boot, Node.js, and React.</p>
@@ -1235,7 +1223,7 @@
       </p>
     </div>
   </div>
-  <div class="card mb-3">
+  <div class="card mb-4">
     <div class="card-body">
       <h5 class="card-title">Databases</h5>
       <p class="card-text grey-text">Skilled in managing data with both SQL(MySQL) and NoSQL(MongoDB) databases.</p>
@@ -1245,7 +1233,7 @@
       </p>
     </div>
   </div>
-  <div class="card mb-3">
+  <div class="card mb-4">
     <div class="card-body">
       <h5 class="card-title">Architectures and Build Tools</h5>
       <p class="card-text grey-text">Proficient in Microservices architecture, adept at implementing design patterns, experienced with Kafka for event streaming, skilled in JUnit for testing, and knowledgeable in Maven for project management.</p>
@@ -1258,7 +1246,7 @@
       </p>
     </div>
   </div>
-  <div class="card mb-3">
+  <div class="card mb-4">
     <div class="card-body">
       <h5 class="card-title">Cloud Platforms</h5>
       <p class="card-text grey-text">Familiar with multiple cloud platforms such as Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and IBM Cloud.</p>
@@ -1270,7 +1258,7 @@
       </p>
     </div>
   </div>
-  <div class="card mb-3">
+  <div class="card mb-4">
     <div class="card-body">
       <h5 class="card-title">DevOps</h5>
       <p class="card-text grey-text">Knowledgeable about Docker, Kubernetes, OpenShift, Terraform, Ansible, Jenkins, and Git for streamlined containerization, CI/CD pipelines, and infrastructure management.</p>
@@ -1290,7 +1278,7 @@
 <!-- Achievements tab content -->
 <div class="tab-pane fade" id="achievements" role="tabpanel" aria-labelledby="achievements-tab">
   <!-- Sample data for achievements -->
-  <div class="card mb-3">
+  <div class="card mb-4">
     <div class="card-body">
       <h5 class="card-title">Honours</h5>
       <div class="card-text grey-text">
@@ -1306,7 +1294,7 @@
     </div>
   </div>
   <!-- Additional achievements -->
-  <div class="card mb-3">
+  <div class="card mb-4">
     <div class="card-body">
       <h5 class="card-title">Awards</h5>
       <div class="card-text grey-text">
@@ -1321,7 +1309,7 @@
       </div>
     </div>
   </div>
-  <div class="card mb-3">
+  <div class="card mb-4">
     <div class="card-body">
       <h5 class="card-title">Certifications</h5>
       <div class="card-text grey-text">
