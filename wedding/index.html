@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Geetha Amirtha Varshini Weds Gokul Prakash</title>
+<title>Geetha Amirtha Varshini Weds Gokul Prakash — Wedding Invitation</title>
 <style>
   :root{
     --rose: #ff6f91;
@@ -28,13 +28,15 @@
     position: relative;
   }
 
+  body.locked { overflow: hidden; height: 100vh; }
+
   @keyframes bgShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
 
-  /* floating hearts background */
+  /* floating hearts / petals background */
   .hearts {
     position: fixed;
     top: 0; left: 0;
@@ -61,6 +63,21 @@
     100% { transform: translateY(-105vh) translateX(-20px) rotate(360deg); opacity: 0; }
   }
 
+  .petal {
+    position: absolute;
+    top: -40px;
+    font-size: 18px;
+    color: rgba(245, 192, 74, 0.8);
+    animation: petalFall linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes petalFall {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+    8% { opacity: 1; }
+    100% { transform: translateY(110vh) translateX(40px) rotate(320deg); opacity: 0; }
+  }
+
   .sparkle {
     position: absolute;
     width: 4px;
@@ -76,6 +93,140 @@
     50% { opacity: 1; transform: scale(1.3); }
   }
 
+  /* cursor sparkle trail */
+  .trail-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 10px 3px rgba(245,192,74,0.7);
+    pointer-events: none;
+    z-index: 999;
+    animation: trailFade 0.7s ease-out forwards;
+  }
+
+  @keyframes trailFade {
+    to { opacity: 0; transform: scale(0.2); }
+  }
+
+  /* ===== Envelope Intro ===== */
+  .envelope-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #5c1a2b 0%, #2b0a1f 80%);
+    transition: opacity 0.9s ease, visibility 0.9s ease;
+  }
+
+  .envelope-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .envelope {
+    position: relative;
+    width: min(320px, 80vw);
+    height: min(210px, 52vw);
+    cursor: pointer;
+    animation: envFloat 3.5s ease-in-out infinite;
+  }
+
+  @keyframes envFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .envelope-body {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, #fff5f0, #ffe3d0);
+    border-radius: 6px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+  }
+
+  .envelope-flap {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 55%;
+    background: linear-gradient(160deg, #ffe3d0, #f7c9a8);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top;
+    transition: transform 0.8s cubic-bezier(.7,-0.4,.3,1.4);
+    border-radius: 6px 6px 0 0;
+    z-index: 3;
+  }
+
+  .envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+  }
+
+  .envelope-seal {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #ff8fa8, var(--deep-rose) 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 4;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .envelope.open .envelope-seal {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+
+  .envelope-letter {
+    position: absolute;
+    left: 6%;
+    bottom: -4%;
+    width: 88%;
+    height: 82%;
+    background: var(--cream);
+    border-radius: 4px;
+    box-shadow: 0 -4px 14px rgba(0,0,0,0.15);
+    z-index: 2;
+    transition: transform 0.9s ease 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--wine);
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 10px;
+  }
+
+  .envelope.open .envelope-letter {
+    transform: translateY(-60%);
+  }
+
+  .envelope-hint {
+    position: absolute;
+    bottom: -42px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    animation: fadeIn 1.5s ease, pulseHeart 2s ease-in-out infinite;
+  }
+
+  /* ===== Main content ===== */
   .container {
     position: relative;
     z-index: 1;
@@ -83,6 +234,17 @@
     margin: 0 auto;
     padding: 60px 24px 80px;
     text-align: center;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .ornament {
@@ -121,6 +283,13 @@
     color: transparent;
     animation: shimmer 5s linear infinite, fadeInUp 1.4s ease;
     text-shadow: 0 0 25px rgba(245, 192, 74, 0.35);
+    cursor: default;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .name:hover {
+    transform: scale(1.05) rotate(-1deg);
   }
 
   @keyframes shimmer {
@@ -142,6 +311,7 @@
     margin: 0 14px;
     color: var(--deep-rose);
     animation: pulseHeart 1.3s ease-in-out infinite;
+    cursor: pointer;
   }
 
   @keyframes pulseHeart {
@@ -174,6 +344,21 @@
     color: var(--gold);
     background: transparent;
     font-size: 20px;
+  }
+
+  .section-title {
+    font-size: clamp(20px, 3vw, 28px);
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .section-sub {
+    font-size: 14px;
+    color: rgba(255,245,240,0.65);
+    margin-bottom: 36px;
+    letter-spacing: 1px;
   }
 
   .countdown-title {
@@ -256,6 +441,202 @@
     z-index: 1;
   }
 
+  /* ===== Event cards ===== */
+  .events {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .event-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(245,192,74,0.3);
+    border-radius: 20px;
+    padding: 30px 26px;
+    width: 260px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+  }
+
+  .event-card:hover {
+    transform: translateY(-10px) rotateZ(-1deg) scale(1.03);
+    box-shadow: 0 18px 40px rgba(214,51,108,0.35), 0 0 30px rgba(245,192,74,0.15);
+  }
+
+  .event-card .icon {
+    font-size: 34px;
+    margin-bottom: 14px;
+    display: inline-block;
+    animation: pulseHeart 2.4s ease-in-out infinite;
+  }
+
+  .event-card h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .event-card .event-date {
+    font-size: 15px;
+    color: var(--rose);
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+
+  .event-card .event-time {
+    font-size: 24px;
+    font-family: 'Courier New', monospace;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .event-card .event-desc {
+    font-size: 13px;
+    color: rgba(255,245,240,0.7);
+    line-height: 1.6;
+  }
+
+  .event-card::before {
+    content: "";
+    position: absolute;
+    top: -60%; left: -60%;
+    width: 220%; height: 220%;
+    background: radial-gradient(circle, rgba(245,192,74,0.08) 0%, transparent 55%);
+    animation: rotateGlow 10s linear infinite;
+    pointer-events: none;
+  }
+
+  /* ===== Venue ===== */
+  .venue-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(245,192,74,0.3);
+    border-radius: 20px;
+    padding: 36px 30px;
+    max-width: 480px;
+    margin: 0 auto;
+    backdrop-filter: blur(6px);
+    position: relative;
+  }
+
+  .venue-card .icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+    animation: bounce 2.2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .venue-name {
+    font-size: 22px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .venue-address {
+    font-size: 14px;
+    color: rgba(255,245,240,0.75);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--deep-rose), var(--rose));
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 40px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(214,51,108,0.4);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .map-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(214,51,108,0.55);
+  }
+
+  .map-btn:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .map-btn .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    transform: scale(0);
+    animation: rippleAnim 0.6s ease-out;
+    pointer-events: none;
+  }
+
+  @keyframes rippleAnim {
+    to { transform: scale(3.5); opacity: 0; }
+  }
+
+  /* ===== RSVP ===== */
+  .rsvp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 14px 34px;
+    border-radius: 40px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease, transform 0.25s ease;
+    font-family: inherit;
+  }
+
+  .rsvp-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--gold), #fff3d6);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    z-index: -1;
+  }
+
+  .rsvp-btn:hover {
+    color: var(--wine);
+    transform: translateY(-3px);
+  }
+
+  .rsvp-btn:hover::before {
+    transform: scaleX(1);
+  }
+
+  .rsvp-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: rgba(255,245,240,0.7);
+    min-height: 18px;
+  }
+
   .quote {
     font-style: italic;
     font-size: clamp(15px, 2.2vw, 19px);
@@ -278,6 +659,23 @@
     color: var(--rose);
     letter-spacing: 14px;
     animation: pulseHeart 2s ease-in-out infinite;
+    cursor: pointer;
+  }
+
+  /* confetti burst */
+  .confetti-piece {
+    position: fixed;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    z-index: 998;
+    pointer-events: none;
+    animation: confettiFall 2.2s ease-in forwards;
+  }
+
+  @keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
   }
 
   @keyframes fadeInDown {
@@ -297,36 +695,186 @@
     display:none;
   }
 
+  /* ===== scroll progress vine ===== */
+  .progress-vine {
+    position: fixed;
+    top: 0; left: 0;
+    height: 4px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--rose), var(--gold));
+    box-shadow: 0 0 10px rgba(245,192,74,0.7);
+    z-index: 1001;
+    transition: width 0.1s ease-out;
+  }
+
+  /* ===== Vinayagar blessing ===== */
+  .blessing {
+    margin-bottom: 30px;
+  }
+
+  .vinayagar-frame {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    padding: 6px;
+    background: conic-gradient(var(--gold), #fff3d6, var(--rose), var(--gold));
+    animation: rotateGlow 12s linear infinite;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(245,192,74,0.4);
+  }
+
+  .vinayagar-frame::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(245,192,74,0.4);
+    animation: pulseRing 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulseRing {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.12); opacity: 0.1; }
+  }
+
+  .vinayagar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--cream);
+    display: block;
+    background: var(--cream);
+  }
+
+  .blessing-text {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .blessing-sub {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,245,240,0.6);
+  }
+
+  /* ===== ornate corner flourishes ===== */
+  .container::before,
+  .container::after {
+    content: "❧";
+    position: absolute;
+    top: 10px;
+    font-size: 34px;
+    color: rgba(245,192,74,0.35);
+    z-index: -1;
+  }
+  .container::before { left: 6px; transform: scaleX(-1); }
+  .container::after { right: 6px; }
+
+  /* ===== elegant frame around names ===== */
+  .names-frame {
+    position: relative;
+    padding: 34px 18px;
+    margin-bottom: 6px;
+  }
+
+  .names-frame::before,
+  .names-frame::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .names-frame::before { top: 0; }
+  .names-frame::after { bottom: 0; }
+
+  /* RSVP explanation */
+  .rsvp-heading {
+    font-size: clamp(18px, 2.6vw, 22px);
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .rsvp-explainer {
+    font-size: 13.5px;
+    color: rgba(255,245,240,0.72);
+    max-width: 440px;
+    margin: 0 auto 22px;
+    line-height: 1.7;
+  }
+
+  /* romantic vignette */
+  .vignette {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    box-shadow: inset 0 0 180px rgba(43,10,31,0.75);
+  }
+
   @media (max-width: 480px) {
     .countdown { gap: 6px; }
     .time-block { min-width: 0; padding: 12px 4px; border-radius: 10px; }
     .time-value { font-size: clamp(20px, 6.5vw, 30px); }
     .time-label { font-size: 8px; letter-spacing: 1px; }
+    .event-card { width: 100%; max-width: 300px; }
   }
 </style>
 </head>
-<body>
+<body class="locked">
 
+<div class="progress-vine" id="progressVine"></div>
+<div class="vignette"></div>
 <div class="hearts" id="hearts"></div>
 
-<div class="container">
-  <div class="ornament">✦ ❈ ✦</div>
-  <div class="save-the-date">Save the Date</div>
+<!-- Envelope intro -->
+<div class="envelope-overlay" id="envelopeOverlay">
+  <div class="envelope" id="envelope">
+    <div class="envelope-letter">You're Invited!<br>Tap to open</div>
+    <div class="envelope-body"></div>
+    <div class="envelope-flap"></div>
+    <div class="envelope-seal">&#10084;</div>
+    <div class="envelope-hint">Tap the envelope</div>
+  </div>
+</div>
 
-  <div class="names">
-    <div class="name">Geetha Amirtha Varshini</div>
-    <div class="weds"><span class="heart-icon">&#10084;</span>WEDS<span class="heart-icon">&#10084;</span></div>
-    <div class="name">Gokul Prakash</div>
+<div class="container">
+  <div class="blessing reveal">
+    <div class="vinayagar-frame" id="vinayagarFrame" title="Vinayagar Thunai">
+      <img src="vinayagar.jpg" alt="Lord Vinayagar (Ganesha)">
+    </div>
+    <div class="blessing-text">ஸ்ரீ கணேசாய நமஃ</div>
+    <div class="blessing-sub">By the grace of Lord Vinayagar</div>
   </div>
 
-  <div class="subtitle">Two hearts, one journey begins</div>
+  <div class="ornament reveal">✦ ❈ ✦</div>
+  <div class="save-the-date reveal">Together with our families, we joyfully invite you</div>
 
-  <div class="divider"></div>
+  <div class="names-frame reveal">
+    <div class="names">
+      <div class="name" id="brideName">Geetha Amirtha Varshini</div>
+      <div class="weds"><span class="heart-icon" id="heartIcon1">&#10084;</span>WEDS<span class="heart-icon" id="heartIcon2">&#10084;</span></div>
+      <div class="name" id="groomName">Gokul Prakash</div>
+    </div>
+  </div>
 
-  <div class="countdown-title">Counting down to forever</div>
-  <div class="countdown-date">15th November 2026</div>
+  <div class="subtitle reveal">Two hearts, one journey begins</div>
 
-  <div class="countdown">
+  <div class="divider reveal"></div>
+
+  <div class="countdown-title reveal">Counting down to forever</div>
+  <div class="countdown-date reveal">15th November 2026</div>
+
+  <div class="countdown reveal">
     <div class="time-block">
       <div class="time-value" id="days">00</div>
       <div class="time-label">Days</div>
@@ -345,15 +893,77 @@
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider reveal"></div>
 
-  <p class="quote">Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.</p>
+  <div class="section-title reveal">Wedding Events</div>
+  <div class="section-sub reveal">We would be honoured to have you celebrate with us</div>
 
-  <div class="footer-hearts">&#10084; &#10084; &#10084;</div>
+  <div class="events">
+    <div class="event-card reveal">
+      <div class="icon">&#127881;</div>
+      <h3>Reception</h3>
+      <div class="event-date">Saturday, 14th November 2026</div>
+      <div class="event-time">7:00 PM</div>
+      <div class="event-desc">An evening of joy, dinner &amp; blessings as we celebrate the road ahead.</div>
+    </div>
+    <div class="event-card reveal">
+      <div class="icon">&#128142;</div>
+      <h3>Marriage</h3>
+      <div class="event-date">Sunday, 15th November 2026</div>
+      <div class="event-time">9:00 AM</div>
+      <div class="event-desc">The sacred moment we tie the knot, surrounded by our loved ones.</div>
+    </div>
+  </div>
+
+  <div class="divider reveal"></div>
+
+  <div class="section-title reveal">Venue</div>
+  <div class="section-sub reveal">Both events will be held at</div>
+
+  <div class="venue-card reveal">
+    <div class="icon">&#128205;</div>
+    <div class="venue-name">Sree Varaaham Hall</div>
+    <div class="venue-address">Chennai, Tamil Nadu</div>
+    <a class="map-btn" id="mapBtn" href="https://maps.app.goo.gl/NTRViR7GqKus375h6" target="_blank" rel="noopener noreferrer">
+      &#128506; Get Directions
+    </a>
+  </div>
+
+  <div class="divider reveal"></div>
+
+  <p class="quote reveal">With the blessings of our elders and the grace of the God, two families come together as two hearts become one. We warmly invite you to be a part of this beautiful beginning.</p>
+
+  <div class="divider reveal"></div>
+
+  <div class="reveal" style="margin-top:10px;">
+    <div class="rsvp-heading">We Would Be Honoured By Your Presence</div>
+    <p class="rsvp-explainer">Your blessings and good wishes mean a great deal to us. Kindly let us know if we may look forward to having you with us on this joyous occasion.</p>
+    <button class="rsvp-btn" id="rsvpBtn">&#10084; Confirm Your Attendance</button>
+    <div class="rsvp-note" id="rsvpNote"></div>
+  </div>
+
+  <div class="footer-hearts" id="footerHearts">&#10084; &#10084; &#10084;</div>
 </div>
 
 <script>
-  // Countdown target: Nov 15, 2026, 00:00:00 local time
+  // ===== Envelope intro interaction =====
+  const envelope = document.getElementById("envelope");
+  const envelopeOverlay = document.getElementById("envelopeOverlay");
+  const body = document.body;
+
+  function openInvitation() {
+    if (envelope.classList.contains("open")) return;
+    envelope.classList.add("open");
+    burstConfetti(window.innerWidth / 2, window.innerHeight / 2, 40);
+    setTimeout(() => {
+      envelopeOverlay.classList.add("hidden");
+      body.classList.remove("locked");
+    }, 900);
+  }
+
+  envelope.addEventListener("click", openInvitation);
+
+  // ===== Countdown =====
   const targetDate = new Date("2026-11-15T00:00:00").getTime();
 
   function updateCountdown() {
@@ -382,9 +992,10 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // floating hearts generator
+  // ===== floating hearts generator =====
   const heartsContainer = document.getElementById("hearts");
   const heartSymbols = ["&#10084;", "&#10084;", "❈", "✦"];
+  const petalSymbols = ["❀", "✿", "❁"];
 
   function spawnHeart() {
     const heart = document.createElement("div");
@@ -397,12 +1008,24 @@
     setTimeout(() => heart.remove(), 18000);
   }
 
+  function spawnPetal() {
+    const petal = document.createElement("div");
+    petal.classList.add("petal");
+    petal.innerHTML = petalSymbols[Math.floor(Math.random() * petalSymbols.length)];
+    petal.style.left = Math.random() * 100 + "%";
+    petal.style.fontSize = (12 + Math.random() * 14) + "px";
+    petal.style.animationDuration = (10 + Math.random() * 8) + "s";
+    heartsContainer.appendChild(petal);
+    setTimeout(() => petal.remove(), 20000);
+  }
+
   for (let i = 0; i < 12; i++) {
     setTimeout(spawnHeart, i * 800);
   }
   setInterval(spawnHeart, 1200);
+  setInterval(spawnPetal, 2200);
 
-  // sparkles
+  // ===== sparkles =====
   function spawnSparkle() {
     const s = document.createElement("div");
     s.classList.add("sparkle");
@@ -413,6 +1036,132 @@
     setTimeout(() => s.remove(), 5000);
   }
   setInterval(spawnSparkle, 400);
+
+  // ===== scroll reveal =====
+  const revealEls = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ===== cursor sparkle trail (desktop only) =====
+  let lastTrail = 0;
+  window.addEventListener("mousemove", (e) => {
+    const now = Date.now();
+    if (now - lastTrail < 60) return;
+    lastTrail = now;
+    const dot = document.createElement("div");
+    dot.classList.add("trail-dot");
+    dot.style.left = e.clientX + "px";
+    dot.style.top = e.clientY + "px";
+    document.body.appendChild(dot);
+    setTimeout(() => dot.remove(), 700);
+  });
+
+  // ===== confetti burst helper =====
+  const confettiColors = ["#ff6f91", "#d6336c", "#f5c04a", "#fff3d6", "#5c1a2b"];
+  function burstConfetti(x, y, count) {
+    for (let i = 0; i < count; i++) {
+      const piece = document.createElement("div");
+      piece.classList.add("confetti-piece");
+      piece.style.left = x + (Math.random() * 200 - 100) + "px";
+      piece.style.top = y + "px";
+      piece.style.background = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+      piece.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+      piece.style.animationDuration = (1.6 + Math.random() * 1.2) + "s";
+      document.body.appendChild(piece);
+      setTimeout(() => piece.remove(), 3000);
+    }
+  }
+
+  // ===== interactive hearts (click to burst) =====
+  [document.getElementById("heartIcon1"), document.getElementById("heartIcon2"), document.getElementById("footerHearts")].forEach(el => {
+    el.addEventListener("click", (e) => burstConfetti(e.clientX, e.clientY, 24));
+  });
+
+  // ===== map button ripple =====
+  const mapBtn = document.getElementById("mapBtn");
+  mapBtn.addEventListener("click", (e) => {
+    const rect = mapBtn.getBoundingClientRect();
+    const ripple = document.createElement("span");
+    ripple.classList.add("ripple");
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = size + "px";
+    ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+    ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+    mapBtn.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 650);
+  });
+
+  // ===== Confirmation button =====
+  const rsvpBtn = document.getElementById("rsvpBtn");
+  const rsvpNote = document.getElementById("rsvpNote");
+  const rsvpMessages = [
+    "Thank you kindly. We look forward to your presence and blessings. &#10084;",
+    "We are truly delighted. Your blessings mean the world to us.",
+    "We shall be honoured to have you with us on this joyous occasion."
+  ];
+  rsvpBtn.addEventListener("click", (e) => {
+    burstConfetti(e.clientX, e.clientY, 30);
+    rsvpNote.innerHTML = rsvpMessages[Math.floor(Math.random() * rsvpMessages.length)];
+  });
+
+  // ===== Vinayagar blessing interaction =====
+  const goldSparkleColors = ["#f5c04a", "#fff3d6", "#d4af37"];
+  const vinayagarFrame = document.getElementById("vinayagarFrame");
+  vinayagarFrame.addEventListener("click", (e) => {
+    const rect = vinayagarFrame.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    for (let i = 0; i < 26; i++) {
+      const piece = document.createElement("div");
+      piece.classList.add("confetti-piece");
+      piece.style.left = cx + (Math.random() * 160 - 80) + "px";
+      piece.style.top = cy + "px";
+      piece.style.background = goldSparkleColors[Math.floor(Math.random() * goldSparkleColors.length)];
+      piece.style.borderRadius = "50%";
+      piece.style.width = piece.style.height = (4 + Math.random() * 5) + "px";
+      piece.style.animationDuration = (1.4 + Math.random()) + "s";
+      document.body.appendChild(piece);
+      setTimeout(() => piece.remove(), 3000);
+    }
+  });
+
+  // ===== names double-click blessing =====
+  const brideName = document.getElementById("brideName");
+  const groomName = document.getElementById("groomName");
+  [brideName, groomName].forEach(el => {
+    el.addEventListener("dblclick", (e) => {
+      burstConfetti(e.clientX, e.clientY, 34);
+    });
+  });
+
+  // ===== gentle mouse tilt on cards =====
+  document.querySelectorAll(".event-card, .venue-card").forEach(card => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width - 0.5;
+      const py = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `perspective(600px) rotateY(${px * 10}deg) rotateX(${-py * 10}deg) translateY(-6px)`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+
+  // ===== scroll progress vine =====
+  const progressVine = document.getElementById("progressVine");
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressVine.style.width = pct + "%";
+  });
 </script>
 
 </body>
